@@ -1,0 +1,150 @@
+css = cascading stylesheet
+
+SUMMARY 
+	line-height;1.5;                  = height  space between each line !
+	  padding: 0;
+    	  margin: 0;                      = everything should be joined with screen 
+ [H1 has default padding at top ]
+
+float :left ;
+display :inline ;
+padding :0 0 0 0 ;       > create the nav bar horiztonally    [top right bottom left ]
+
+
+
+. external styling
+by creating style.css in ur project file  and add styling there 
+
+h1{
+    color:blue;
+}
+
+& under index.html = u just attach the link to this css file in ur index.html
+
+~   <link rel="stylesheet"  type="text/css" href ="style.css">
+
+~   internal styling = here u provide styling in index.html file itself
+    <style>
+         h1{
+             color:blue;
+        }
+    </style>
+
+~   inline styling = where u specify style to the particular element    ,  here multiple style cant be used 
+.                                              [ priority is given to inline first ]
+    < h1 style="color:blue;"> Heading 1  </h1>  
+
+
+however preference for external and internal styling depends upon you 
+- whichever element u type first under head tag - it will be give preference !
+
+
+
+
+How css select for elements  for styling them ?
+- firstly - we can use the actual  "HTML" elements   = like h1 ,p , 
+- use <h1 id="id_name">      </h1>    then use        #id_name  { inorder to specify the style  , add properties}
+- use <h1 class="class_name" </h1>    then use        .class_name { color:red; }
+  -         SPECIFIC                  can  use         h1.class_name { color:blue; }   where only h1 will be updated having class_name
+  -         GROUPING                                   h1 , p , h2 { color:red ; }     if same style needed , why not group all elements 
+- use * = universal selector for all elements          *{color:black}                  gets applied to everything  , every element 
+
+
+
+
+Here  You can give colors 
+ style = "background-color:Tomato;"                    for background
+ style = "color:Tomato;"                               for text  color 
+ style = "border:2px solid Tomato;"                    for border
+
+
+
+
+Background Property
+ style {
+    background-color:blue                                    for background color
+    background-image:url("wow.jpg")                          for background image
+    background-image:cover                                   using bg image only for top cover 
+    background-repeat: repeat-x;                             if the image repeat itself , then use it
+    background-attachment: scroll;                           want to scroll the image if user scrolls down , othwerwise  :fixed;
+    background: #ffffff url("img_tree.png") no-repeat right top;            >>>                         use to specify all values at once !
+    background-blend-mode:multiply                                          >>>     use to multiply both the combinations  [  u cant use bg color & bg image texture at same time ]
+   }
+
+
+Borders 
+style{
+    border-style : dotted , dashed , solid , double , groove , ridge , inset , outset , none , mixed  
+    border-width:5px 20px;
+    border-color:black
+    border-top-style:solid                                     specify value for individul sides in the border (top , right , left , bottom )
+    border: 5px solid red;                                     use it to specify all attributes in one go 
+}
+
+OUTLINE= just like borders we have outline property for the box having same attributes 
+
+Margins  =  create space  an element's content [ OUTSIDE SPACE ]
+style{
+    margin: 25px 50px 75px 100px;                              top right bottom left 
+}
+
+Padding = generate space around ur values  [ INSIDE content space  ]
+style{
+    margin: 25px 50px 75px 100px;                              top right bottom left 
+}
+
+Height & Width 
+height:auto;   width:50%    height:200px;
+
+
+TEXT FORMATTING
+style{ 
+    color:blue;               = text color 
+    background-color:blue;    = background color of text
+    text-align:center;        = move the text accordingly   ( left , right , justify )
+    direction:rtl;            = reverses the string         
+    vertical-align:top;       = place the image or text anywhere   img.top { vertical-align:top; }  (top middle bottom)
+    text-decoration:none;     = removes all lines           ( overline , line-through , underline )
+    text-transfrom:           = change text                 (capitalize , uppercase   , lowercase)
+    letter-spacing:3px        = space between each character( -3px )
+    word-spacing:10px         = space between words          ( -5px)
+    text-shadow:2px 2px;      = add shadow to text           ( 2px 2px 5px red  , 2px 2px red )
+}
+
+
+LINKS
+
+a:hover{
+    color:red                = when mouse is over link , color changes 
+    font-size:24px           = font-size increases  
+}
+
+Display
+l{
+    display:inline;          = display content horizontally
+    display:block            = display it block wise
+    display:none = visibility:hidden = hide the content 
+
+
+
+}
+
+
+id    = name   ,   specific for each element 
+class = used for multiple elements inorder to adjust properties
+
+
+
+
+
+#mypara > p  {  = refers to the child  , thus we can add style !   
+  color:"blue"
+}
+#mypara + p  {} = adjacent sibling # immediately following mypara tag  
+
+[   > == means child   ,     +  == adjacent sibling    ,   ~ == select all the siblings  ]
+
+
+
+
+

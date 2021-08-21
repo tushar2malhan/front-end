@@ -1,0 +1,824 @@
+AT THE END WHAT YOU WANT >  JUST KNOW WHAT DATA TYPE IT IS , AND HOW TO ACCESS THAT  DATA TYPE 
+
+
+
+React is Library of js  (angular is framework built by google )
+why = in js we need to go to each element to view it or change it 
+[ framework is like an architecture  mvc model view controller >>> have framework runs the show where  it tells you where to write what and make things work ] 
+[ Library there's no architecture >>> in Library default features are specified to code > import me  ]
+
+React is built on top of js  > so react gets converted into js 
+// tools required for react like webpack (for bundling - grouping files in chunks ), 
+//                               babel (conversion of code from react to vanilla js ) , 
+// npm(node packer manager)      node.js (runs js without chrome) like window object  for chrome , node for js |npm registry where all packages are stored 
+
+WHY REACT ?
+for single page app = it dosen't relods the page when user gets shifted 
+React creates a VIRTUAL DOM in memory = Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the browser DOM.
+Clear web components
+
+components = shorten your html code , so can be easily readable for html , js code
+JSX = javascript  syntax extension 
+npm = packet manager - which downloads packets 
+
+
+
+npx create-react-app demo_1  =  boilerplate  (installs all packages for react)    - single time for creation of the app / in your folder 
+npm start                    =  start the app on localhost:3000
+Open app.js = in SRC     > inorder to develop react application
+use js-react in search   > inorder emmit 
+import './App.css';          = we include our css files in the app 
+
+        Q Face any issue ?  cd into folder/file  and do npm start
+        | or do npm install  | or npm i react-scripts
+        
+
+
+
+
+
+
+
+
+
+index.js  = HOW and WHAT to display data 
+    import React from 'react'
+    import reactDOM to render(What to render  , where do i want to render it ) 
+    import App from './App';                // We import the function name or class name from files  
+
+    reactDOM.render(                        // what to create , what element needs to be added , from where 
+        <h1> Hello </h1> or < APP/>,        // use function created in app.js 
+        document.getElementByID('root')
+    )
+
+jSX = under render > we cant type js so we use JSX to use html + js with {}
+    { use javascript code }
+
+index.html ['root']   >   App.js [ functions created for app ] >  index.js [ render(what, where)  DISPLAY CONTENT ] 
+
+2 types of components  in react  | basic difference is that in class >>> we can use the state , and is low performance as its bulky in nature because of dependencies 
+    - function base       = function > return ( Whatever u feel like )
+    - class base          = class > constructor > render used to >  return (statments )
+    Each components file needs to be exported , so that it can be imported in App.js
+    [   because in index.js we render the App function() , In document.'root']
+
+    ReactDOM.render >>> used only once - connection btw react app  and DOM  in index.js
+    class > render  >>> this render used in class to  return elements 
+
+    app.js > dashboard , landing_page > header 
+    Output >>> dashboard , header , landing_page [ inisde components given priority]
+
+    this.state = {} state object [gets updated on each component = AUTO SUBSCRIPTION ]
+    < input value = {this.state.name} > onchange {(e) => { this.setstate({name:e.target.value }) }}
+    access this.state by input          when we click on input ontext box 
+   
+    change any object's property >>> we use setstate 
+    onchange = function gets called { (e) => {} }   
+    props =  MEANS TAKING OBJECT ATTRIBUTE FROM PARENT = sending value to another component 
+    WE created 
+    | <div> {this.props.dummy}</div>  in landing page 
+      so we include this object dummy in dashboard  after we include the landing page 
+      <landing_page dummy={this.state.dashboard}/> in dashboard page 
+      | where we give attribute value by 
+      | this.state = {
+          dashboard:' value sending to landing created in dashboard'   == value we create 
+      } 
+
+      TO CHANGE IT > WE NEED SET STATE 
+      handlechange = val => { this.setstate ({ dashboard:val }) }
+
+      | we give value in current or some other file by 
+        <landing dummy ={this.state.dashboard}   />
+
+      | onclick = we need function , setstate ({which itself is a function })
+
+      there is only one this.state 
+
+
+render must comes inside the class! or it will waste ur time 
+
+    this.state = attribute of class  > setstate >>> updates the states  from everywhere [because of SUBSCRIPTION function ]
+    [ cant change it directly , like this.state.name ='XX'X]
+    [so THINK  it like a variable which can ACCESSIBLE TO ALL COMPONENTS ]
+
+
+class = react 
+render = js 
+return = html 
+
+use const styling before classes or functions
+
+
+STYLING 
+    inline styling  =<h4> style = {{ display : 'inline-block' }} > one for js {} > one for js {} </h4>
+    block styling   =<h4> style = { style.userproperties} </h4>
+        <h4> style = { {...style.userproperties, ...style.redcolor}} </h4>
+
+    external styling = in new file 
+    import  './css/style.css'
+
+    .container{
+    .container{
+        width :20%;
+        float : left 
+    }
+    div classname ="container"
+
+
+
+
+
+Q  change current class attribute  
+    
+    DEFINE THE STATE  this.state = {name:'tushar' }
+    ACCESS THE STATE  {this.state.name}
+    CHANGE  THE STATE WITH NEW VALUE  < input type="button" value ='click' onclick = { () => {this.setstate({name:'changed name '}) } } />
+
+Q use  same attribute state to put to other file [component]   from parent to child 
+    
+    DEFINE THE OBJECT WITH KEY = { VALUE } IN CHILD COMPONENT  dummy ={this.state.age}
+    ASSIGN THE KEY in html tag =            {this.props.dummy}
+
+    [can never ever change props directly > go to parent class > create the function and give access to the function to child  ]
+    <button onClick={ () => {this.setState({name:'TUSHAR MALHAN'})}} > chnage name for props </button>   change name 
+
+
+Q Now change parent state from child component
+        since parents attributes and props cant be change > we use setstate 
+    
+        handle = v => {this.setState({age:v})} = CREATE FUNCTION IN PARENT
+        <header handle={this.handle} />        = ASSIGN  THE FUNCTION IN CHILD COMPONENT IN PARENT FILE
+
+       <input type="button" value ='age' 
+        onclick = {() => { this.props.handle(22) }} /> =  ASSIGN THE FUNCTION IN CHILD CLASS COMPONENT IN CHILD FILE IN A BUTTON  WITH AN ARGUMENT 
+        
+
+    
+
+ONLICK ( NEEDS A FUNCTION ) -  WASTED MY WHOLE DAY ON THIS SHIT 
+LEARN THE DIFFERENCE BETWEEN    this.state.handle   &&   this.handle
+
+    SUMMARY 
+
+
+ 
+
+ACCESS STATE    =  {this.state.value}
+> IN CHILD      =  {this.props.key}    | < Child key = {this.state.value} /> 
+        ANY ATTRIBUTE ACCESSED OUTSIDE OF CLASS CONSTRUCTOR WILL BE MADE FROM PROPS [WHETHER CHILD OR PARENT COMPONENT 
+        PROPS CAN'T BE CHANGED WE USE SETSTATE 
+
+CHANGE STATE  = onClick={(e)=> {this.setState(value:'new_value')} } IN BUTTON  OR INPUT ONLY , CAN'T SET DIRECTLY 
+CAN BE DONE BY DEFINING FUNCTION ONLY 
+
+    FUNCTION  IN PARENT    = handle = () => {this.setState({val:'new_val'})}   CREATE FUNCTION SEPERATELY , THEN USE THIS FUNCTION WITH CHILD PROPS 
+    IN CLASS                {this.props.handle()}
+
+    FUNCTION  IN PARENT    = handle = val => {this.setState({val:'val'})}      WITH ARGUMENT , GIVEN TO CLASS 
+    IN CLASS                {this.props.handle('ok')}
+
+
+EVENTS  
+    <button  onClick ={this.shoot}>submit  </button>          
+    WHERE shoot IS A FUNCTION ()  DEFINED IN PARENT  CLASS 
+
+
+
+You get access to the INPUT value by using the event.target.value  OR   event.target.name 
+    [WHEN WE USE THIS FUNCTION WE SET THE STATE TO BE e.target.value SO >>> e.state.value which  GETS INPUT DEFINE VALUE ]
+    [ I FACED ISSUE , AFTER SETTING THE setState of (total) >>> i was calling function inside js which is wrong 
+    >>> I CHANGED setState OF TOTAL - USE THAT FOR MODIFIED VALUE  ]
+
+        <input type="text" onChange ={(e) => {this.setState({name:e.target.value})}}/>
+                {this.state.name}
+
+
+GET VALUE FROM DROPDOWN SECTION
+    onChange={(value) => {this.setState({select_option:value.label})}}
+
+
+GET CHECKED IF CHECKBOX IS TICKED OR NOT   from the input box 
+   
+    change =(id) =>{this.setState({ selectedid:id })}
+        
+    handlechnage =(e, id) => {
+        if(e.target.checked==true){
+            this.change(id)
+        }
+    }
+    <input type="radio" checked={this.state.selectedid==item.id} name='true'  onChange={(e,id) => {this.handlechnage(e, item.id) }} />
+
+
+
+GET VALUES FROM ARRAY 
+    ({names: [...this.state.names , {name:this.state.name } ] } )}}
+    {this.state.names.map((item,index) => { return <div>{item}</div> })  } 
+    ARRAY NAMES INLCUDE ... AND NAME=''
+
+    eg 2 = selected:[...this.state.selected,item]  where item is map of all list1 values 
+
+
+SETSTATE IS ASCYN = CHANGES DONE WILL BE REFLECTED AFTER IT'S CODED 
+console.log(before setstate) will give old result 
+
+
+DEFINE THE OUTPUT IN RENDER , DEFINE THE CHANGES IN FUNCTION ABOVE RENDER  , THEN ASSIGN THE BUTTON TO CHILD OR PARENT 
+
+
+ONE LINER TERARY [ CONDITIONAL STATEMENT ]
+    this.state = { flag : true }
+    return(
+        {this.state.flag && <Child/>}     # if toggle is true >>> go to child 
+        <button onclick = {() => this.setState({flag:!this.state.flag})} > toggle </button> 
+    )
+
+why setstate in function - yes  class has problem  , u use this.state.name will show object
+
+IMPORTING 
+    // issue with importing name from js file > do we need to use camelcase for typing clasname 
+
+    // li key = {} >>> in list we need key , because each value can have unique identification 
+    // how to include js:react feature automatically in all new files   >>> use extension .jsx inorder to emmit html tags 
+
+    //  in app.js we dont import react from react.js  >>> because we import React from 'react'
+
+
+LIFECYCLE METHODS 
+    why =       we show child class when we render it but if its lost connection it wont show up  called MOUNTING > 
+
+    USED IN CLASS 
+    constructor [ for this.state {objects} ] > DidMount [ api call] > DidUpdate [updates]  > unWillMount [ constructor dies ]    
+
+   mounting   = when u show particular element from child  class  [  from parent component ]
+        - constructor  , getDerivedStateFromProps  , render  ,  componentDidmount 
+
+   updation  = change in props or state , getDerivedStateFromProps , render , getSnapshotbeforeUpdate , componentDidUpdate
+
+   unmounting = make the button that removes link
+        - unWillMount 
+
+
+rendor = displaying something in DOM  , virtualDOM 
+
+
+
+
+
+DELETE PROPS OR ELEMENTS  [ parent class ]
+
+    this.state = { flag : true}
+    <div>
+            CONDITION PLACED = 
+        {this.state.flag && < Child />}
+        <button onclick = {() => {this.setState({this.flag : !this.state.flag }) }}  > Delete </button>
+
+
+        If flag is true , run chid component , else button will make flag opposite of value [if true then false ]
+    </div>
+
+
+    <button> onclick = {() => {this.setState{count : this.state.count +1 }} }  > Increase count </button> 
+
+
+We use destructuring methods just for your user friendly usage 
+Array destructuring 
+    - unpack values from array and object 
+    - usally we get each value of array by indexing[0][1]
+    -- VIA es6 we access all with single line
+    let [top1,top2,var3,var4] = arr
+    let [top1,,,,toplast]     = arr  > get first and last elements
+
+Object destructuring
+    const { count } = this.props    >>> just in case u dont need to use this.props.count 
+    in  child  >>> {count }         >>> Just use { this.count }
+
+use object destructuring or this.state inorder to bring state from parents 
+    this.state = {
+    count : this.props.count }
+
+
+
+
+STATIC METHOD  = means value of props of parent wont be accessed 
+
+[instance of class cant access it , only the class can access the method ]
+[in child class ] 
+
+
+REQUIRED WHEN THERE IS change in state needs  change in props 
+    static getDerivedStateFromProps(props,state){
+        console.log(this,'this')   // undefined 
+
+        if(props.count != states.count){
+            return {
+                count:props.count              Update the child props state 
+            }
+        }
+    }
+
+componentDidmount(){                    just to fetch the API's or server call 
+        fetch('json.placeholder.com')
+    }
+
+
+shouldComponentUpdate(nextProps , nextState) {              decides whether rest of  component should render or not 
+    console.log( this.props, nextProps  )         // this.props = current prop value from parent , nextProps = change count of new value 
+    if(nextProps > 8){
+        return false                        // if nextprops value > 8 it stops updating 
+    }
+    return true
+}
+
+componentWillUnmount(){
+    clearInterval(this.intervalRef)
+}
+ if u unmount it , it stops the function setInterval(){console.log('tushar)}
+so when u delete it , toggle button it without WillUnmount will create MEMORY LEAK 
+
+
+
+WE CAN IGNORE ERRORS  
+    create file  error.js
+
+            this.state = {iserror: false}
+        }
+
+        static getDerivedStateFromError(err){
+            return{ iserror : true}
+        }
+
+        render(){
+            if(!this.state.iserror){
+                return this.props.children
+            }
+            else{
+                return(
+                    
+                    <div> Component Failed </div>)
+                }
+        }
+    }
+Bound this file in class name 
+<Errorboundary> <Child/> <Errorboundary>
+if error comes up , seperate message is shown 
+
+
+CREATE A REFERENCE    
+this.state ={
+    chatlist =['hello there ']
+}
+    this.chathread = React.createref() 
+
+<div ref = {this.chathread}>
+
+
+getSnapshotbeforeUpdate(previousProps , previosuState){    
+    (){}
+}  
+CHECKS COMPARISON WITH CURRENT AND PREVIOUS PROPS  - WHICH GOES TO COMPONENT DID MOUNT 
+
+
+
+PURECOMPONENT - what if u can pass attributes to all children |  all packages are stored in npm registry 
+    const{name, age , height } = this.props
+
+    installing props types = npm i prop-types   | stored in package.json
+    import PropTypes from 'prop-types'
+
+            
+    PropChild.propTypes = {
+        name : PropTypes.string,
+        age : PropTypes.number ,         we hardcode object keys to their type  for state objects
+        height:PropTypes.number
+    }   
+    u change type of state >>> will show errror in console 
+    
+    PropChild.defaultProps ={
+        name:'default',
+        age:21,
+        height:'5-6'
+    }                                   if values not sent , default values taken up 
+
+    export default class xyz extends React.Component {         
+    button onclick={this.setState({name:'tushar'})}  here shallow check is done  > if state change for same value , it wont render or show the same 
+    } 
+
+HOC -   function takes wrap component , spits new version of the component 
+
+    const addcolor = (color) => (WrappedComponent) => {
+        return class extends React.Component{
+            constructor(props){
+                super(props)
+                this.state ={ color:color}         # arg:parameter - dynamic color 
+            }
+        }
+        render(){
+            return <WrappedComponent {...this.props} color={this.state.color}>
+        }
+    }
+    export default addcolor
+
+
+    import addcolor [ function in  parent  class  PropDetails ]
+
+    style={{color:this.props.color}}
+    
+    export default addcolor ('black') (PropDetails)    # dynamic arg given 
+
+    Now THIS PARENT WILL HAVE STATE COLOR from addcolor
+  Q wanna add any ARGUMENT ?    =   export default addcolor('grey')(PropDetails) in Parent class 
+    Now if u do this.props.toDO > it wont show from it , because it takes props from the addcolor(function ) >>> so u need to remove addcolor =   export default PropDetails
+  Q so u want all props for the parent ?   >>> {...this.props }  in addcolor() 
+
+
+
+export {dummy }
+we try to import in {dummy} because it is a function component created in another class , so to bring the function component we import {dummy } 
+- when we export the dummy we  do   >    export { dummy } |  not export dummy |  because it is an object 
+
+
+AXIOS  is  a package to be installed 
+status 200 = success get 
+status 201 = success put  
+
+    npm i axios 
+
+    context API 
+    drill it down so that u dont need to pass states to every child 
+
+
+    import React , {createContext} from 'react'
+    export const dataContext  = createContext()     it allows to retrieve and inject data in application
+
+    Making server calls 
+    Server = computer connected to internet all the time to serve the data [supercomputer]
+     server crash , everything gone 
+    Cloud  = distributed network  of servers 
+
+
+    talk to server via API > different ways to call   GET , POST , PUT , DELETE 
+
+   Q how  the server promise works 
+   
+    Promise =  we resolve it or reject it  [ here we hardcode it = resolve]
+    var dummy = new Promise((resolve,reject) => { resolve('howdy')}).then(data => {console.log('success') }).catch(err => {console.log('error')})
+
+
+    then / catch 
+    componentDidMount(){
+        axios('https://jsonplaceholder.typicode.com/commentss').then(response =>{console.log(response.data,'success')}).catch(err => {console.log(err,'error')})
+    }
+    axios.get().then(callback => {}).catch( callback =>{} )
+
+
+    In the Url of GET /comments?postid=1    = called  Query params  means >>> get details of username where post id is 1 
+
+    const id = 13
+    axios(`https://jsonplaceholder.typicode.com/comments?postid=${id}`)
+    > we take the id dynamically
+    > check it by going to Network tab in inspect 
+    > network > xhr > ur get id > Headers
+
+Pass objects in URL 
+    axios.get(`https://jsonplaceholder.typicode.com/comments`,{
+    params:{
+        postId:id
+       }
+in backends this postId we provide the key 
+
+THIS IS REDUNDANT , we create a single call where we supply url , method , params 
+Configuring axois 
+
+    import axios from 'axios'
+   
+    const secureaxios = axios.create({
+    baseURL:'https://jsonplaceholder.typicode.com'})
+
+[before response comes we can intersept request and response ]
+    
+    secureaxios.interceptors.request.use(config =>{
+    config.headers['Auth'] ="Bearer Token"
+    return config })
+
+[ eg u go to bank website , we get tokens to perform necessary functions , we never use login id and pass for it again and again ]
+[ the server  loooks at the HEADERS for authentication ]
+
+
+    secureaxios.interceptors.response.use(response => {
+        console.log('getting response ')
+        return response 
+    },err => {
+        console.log('Got an error from server ')
+        return Promise.reject(err)})
+
+    export default secureaxios
+
+[ we just use the params , not the url ] 
+
+
+POST objects in url now [These path /posts is given from server  ]
+    
+    secureaxios.post('/posts',obj).then().catch()
+    
+        another way to pass objects 
+    secureaxios({
+            method:'post',
+            url:'/posts',
+            data:obj,
+        }).then().catch()
+
+PUT [change ]
+     secureaxios({
+        method:'put',
+        url:'/posts/1',
+        data:{name:"malhan"}
+        }).then().catch()
+
+DELETE 
+    secureaxios({
+        method:'delete',
+        url:'/posts/1
+    }).then().catch()
+
+
+
+SPA HANDLING 
+[ u use conditional rendering to move from one state to another - Messy  ]
+    react-router-dom  [    npm i react-router-dom    ] package 
+
+    import { BrowserRouter ,Route , Switch }  from 'react-router-dom'   | iN APP.JS 
+
+    this.state={
+        users:['tushar','malhan']
+    }
+
+    return(
+        <BrowserRouter>
+            <Header_page />
+            <switch>
+                <Route exact  path ='/' component ={Dash} />
+                <Route path ='/UserManagement' render = { () => <UserManagement user = {this.state.users } /> } />
+                <Route path ='/' component ={PageNotfound}/>
+            <switch/>
+        </BrowserRouter>
+    )
+    
+    BrowserRouter is a wrapper 
+    route sees if path is '/'( only domain ) > it will show component
+    route path ='/UserManagement'  > will show both 
+    switch     = tag wrapper  > makes sure only one path works [ '/' or '/UserManagement']
+    [   the path works order wise   or   use exact ]
+    Link is like anchor tag  - brings you up to the link - used in app js where route is defined for all child components
+    if path not exist header will show up , default file      path='/' at end component={page not found } > if no path matching , it goes to error 
+   
+
+  Q wanna Pass the props , can't add in component      >>> create callback function - render{()} 
+    - <Route path='/dash'   render={() => <Dash users ={this.state.users}/>} />
+    - Other way to add component and Only way to send props in child 
+   
+   
+   
+    import {Link} from 'react-router-dom'     in child class 
+    return(
+        <div> <Link to='/' >Home page </Link></div>
+        <div> <Link to='/UserManagement' > User UserManagement page  </Link></div>
+    )
+
+    ROUTES - make the route , so the user can type it and go there 
+    Link   - automatically makes u reach there 
+
+    # check the white space when DEFINING the  link and the route 
+  Q What if u want to edit user list from which the links are created ,how can we dynamically add user id 
+    <Route exact path='/dash/:id'/>    - here id will be stored : dynamically
+  Q Want route property for ur Child
+        <Route path='/dash/:id' render={(routeProps) => { <Header handlechange={this.handlechange } {...routeProps} />} } />
+
+HOOKS 
+
+    functional components 
+
+    import React , { useState , useEffect } from 'react'
+
+    function Dummy (props){
+        const { user } = props    
+        const { name , setName } = useState('')
+        const [ userDetails, setUserDetails ] =  useState(user)       # from props (user)         # always Use CameCase 
+
+        useEffect ( () =>  { 
+            console.log('both executing ')
+
+            return () => {
+                console.log('Executing unwill mount ')   # executes unwill mount 
+            }
+        } , [userDetails,name] )              # when  both state changes > it executes the function 
+ 
+        return(
+
+            <div> from dummy </div>
+            {userDetails.map(item => <div>{item} </div>  )}
+
+            < input type="text" value = {name} onChange = {(e) => {setUserDetails ([...userDetails , e.target.value ] )} } >    # we need temporary state to store values , 
+            < button onClick ={() => {setUserDetails( [...userDetails,name]); setName('') }}>                    # the value of textbox filled with name , that we fill up
+
+            <button onclick={() => { history.push(/dash)  }}>   when there is change go back to histoy 
+
+        )
+    }
+    export default Dummy
+
+import { useState , useEffect } from 'react'     # useState === setState()    # useEffect = listen to  change  happening and do function
+
+ # no this.props in functional component
+ # no SUBSCRIPTION factor here by this.state , hooks give you SUBSCRIPTION factor > we  import React , { useState } from 'react'
+ # useState is a function  returns array  [  state , setState ]
+ #     const [ userDetails , setUserDetails ] = useState(users)   = we bring props  | set the initial value of userDetails to users 
+
+ # useState('')  is a function - where initial value of empty string is send acrossed , returns array [0] = state array[1]=chnage state 
+ # <input type="text" onChange={(e) => {setUserDetails([...userDetails,e.target.value]) } } />
+=  this way we initialize the name but 
+ Q how to create temporary state 
+
+=  const [ name , setname ] = useState('')
+    <input type="text" onChange={(e) => { setname(e.target.value) } } />
+    <button onClick={() => {setUserDetails([...userDetails , name ])}} > Add name </button>        # this name will give empty input given by useer  and all userDetails values will be setstated 
+# REMEMBER THE STATE VALUE U R CHANGING , MUST BE CHANGED WITH SETSTATE VALUE WHICH WILL BE  DEFINED BY YOU IN useState('') as 2 parameter
+    {setobjname({newname:name.fname } )}}   # error = u r setting the object newname as new name 
+    setobjname will automatically set the new state of ur name - which is set an empty string  
+
+ # useEffect = listens to the changes of state values , if no arg passed inside it  > the useEffect function  will be called 
+ useEffect =( () => { },[])   >>> for componentDidMount 
+
+
+
+
+----------------------------------------   TIME WASTAGE -------------------------------------------------------------------------------------
+FOR EVERY BLODDY EVENT , - U HAVE TO SHOW , U HAVE TO CLICK  , U HAVE TO UPDATE > everything NEEDS TO BE PASS IN RESPECTIVE FIELD AND FUNCIONS 
+onclick()
+onchange()  EVERYTHING NEEDS TO BE RENDER UP , CHANGES MADE NEED TO BE SHOWN WITH ANOTHER CHANGES !
+Whenevr u make onchange to name , it goes to temporary state name for onchange  and when u click the button  update the state  for the current name by making new temporary state for onclick 
+- We always use props whenever we create functions so we pass functions component from parent to child component
+- how we show all the values that we add in the array  = return {...state,  userDetails:[...state.userDetails ,action.payload ] }  # we are just adding name with state.userDetails again 
+- if delteNAme , addName , Props , userDetails NOT DEFINED >>> REMEMBER to destructure it and include in the components 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+REDUX    [ as means of passing and receiving data from components without context API ]
+    - is  package
+    - npm i  redux , react-redux      = install it 
+
+    store        = is where data is present for the website , 
+    Provider     = we need to inject data in app ,
+    reducer      = function  to alter data from the store and create in seperate file and connect it to component called dispatch 
+    connect      = inorder to connect and have bridge between react and redux , 
+    [ with connect = we get the data wd callback in component ]
+
+in redux - data is stored in RAM 
+
+we create the store , we inject the data in provider tag , we access data by connect in the componennt [mapStateToProps] , 
+
+Process          =  app.js - createStore(reducer,initialstate) , <Provider store ={store} > < UserManager /> </Provider>   |     reducer (state, action)   |    connect - function 
+
+
+                                 |                                                 [app.js]                   |
+import { createStore } from 'redux'   = returns object that creates store 
+import reducer from './reducer'          = for logic 
+import { Provider } from 'react-redux'   = for injecting data in application
+
+const initialstate = {
+    userDetails:[],
+    commentDetails:[]
+}
+const store = createStore(reducer,initialstate )          = 1 arg = reducer , 2 arg = initial state == initial data  ( if dont have it create it )
+    render(){
+        return(
+            <Provider store ={store} >                   = we inject the data via Provider
+                <div>  
+                    <UserManager />                        = here in this component , we extract  data 
+                </div>
+            </Provider>}
+
+
+
+        |                                               [ Reducer.js ]            |
+
+        export default function reducer(state = {} , action) {           = state > initial data , action = what to do 
+            switch(action.type){
+                case 'ADD_USER':{
+                    return { ...state , userDetails: action.payload}
+                }
+                case 'ADD_comments':{
+                    return { ...state  , commentDetails :action.payload}
+                }
+                case 'ADD_NAME':{
+                    return {...state,  userDetails:[...state.userDetails ,action.payload ] }         #single reducer  
+                }
+                default:{
+                    return state}
+        }}
+// final value of the store > where userDetails = {action.payload}
+// everything remains same in the state , except for userDetails as we includde action.payload iniside it  // thats y we use {   ...state   }
+// if we combine the reducers we just push the values inside the [app.js userDetails array]
+
+
+
+
+
+                            |                       [usermanager.js]        | 
+
+import React from 'react'
+import { connect } from 'react-redux'             # bridge btw react and redux 
+
+const {userinfo} = props                           # destructuring the state and using it 
+function Usermanager (props){
+    return(
+        <div>
+            {userinfo.map(e =>  {e} )}
+        </div>
+    )
+}
+const mapStateToProps = state =>{              # By CREATING STATE here state == userDetails  is taken from app.js  | ie state = initialstate
+    userinfo :state.userDetails                # we pass the data For the connector component
+}
+export default  connect(mapStateToProps)  (UserManage)  
+
+[ # connect takes 2 arg  =  one is to use states from props [mapStateToProps]  , dispatch  - send states
+  # connect is function that returns high order component   # we call 2 functions together called CURRYING     
+  # connect takes CURRYING   connect (mapStateToProps)(UserManager) ]
+#*   here app.js loads only once - when your application loads up  *#
+
+
+
+
+
+                                              |                           [ DASHBOARD.JS ]                        |
+
+    import React from 'react'
+
+    import Usermanager from './usermanager'  // connecting from other file 
+    import Comments from './commentmanager'
+    import {connect} from 'react-redux'
+    import axios from 'axios'
+
+
+
+    class Dashboard extends React.Component{
+        constructor(props){
+            super(props)}
+            componentDidMount(){
+                const{initialUser , initialComment }=this.props                                     //  = this.props = because we created the dispatch here 
+                axios('https://jsonplaceholder.typicode.com/users').then(e =>{
+                    initialUser(e.data)}).catch(e=>{console.log(e,'error')})
+
+                axios('https://jsonplaceholder.typicode.com/comments').then(e =>{
+                    initialComment(e.data)}).catch(e=>{console.log(e,'error')})
+            }
+            
+            render(){
+                return(
+                    <div style={{textAlign:'center'}}>       
+                        <h1> The store </h1>
+                        <Usermanager/>  <br/>
+                        <h1>Comments</h1>
+                        <Comments/>
+
+                    </div>
+            )}}
+
+    const mapDispatchToProps = dispatch => {
+        return{
+            initialUser:( val) => {dispatch ({type :'ADD_USER' , payload:val})},
+            initialComment:(val) => {dispatch({type :'ADD_comments' , payload:val})}
+        }
+    }
+    export default connect(null , mapDispatchToProps)(Dashboard)
+
+    // we take null states from parent  &&  send dispatch function to children
+    // this dispatch action will be send across the reducer function
+    // from dashboard we brought data > we dispatch to reducer > we further transfer it to app.js initialData - userDetais as action.payload  
+
+
+AUTHENTICATION AND AUTHORIZATION
+
+client > username && pass > server 
+server > idtoken > client [ token is response the server provides and u can perform functionalities ]
+- if client is idle for particular time period , token is timedout 
+in google auth - response body Payload is fixed with number , where user can signed in with !
+
+
+scrath - redux , reducer , react-router-dom , component
+import { createStore } from 'redux'     
+import { Provider } from 'react-redux'                                 # BRIDGE so react-redux
+import { connect } from 'react-redux'                                  # BRIDGE so react-redux
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom' 
+
+
+DEBUG 
+ inspect > sources > Ctrl+p [ to open the file ] > mark the line and refresh it >>> hover it and get the output 
+[ if hovering dosent work
+  play the debugger to check the data  , 
+  or comment elements out and refresh it , to check the particular error 
+
+  - cant do with jsx  , is done for js elements 
+]

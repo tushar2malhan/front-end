@@ -1,0 +1,652 @@
+javascript - is client side scripting language where u can make ur websites dynamic 
+(   ECMAScript- is an organisation that created standards for technologies [ guidelines for making language ]
+ECMA-262 was the standards made by ecmaScript organisation for javascript - for scripting language     )
+    ES6 , ES7 , ES8 , ES9 , ES10 , ES11 - are the improved editions of ECMA-262 standards 
+
+we need browsers(m) and a code editor to write the code (vscode , notepad) >
+
+
+
+create .js and add the functionalities in ur index.html = with <script>  [just like we link the styling .css files with link=style.css]  and add src in scripts  <scripts src='js.js'>  
+or do inline js = where script identified at  bottom of page <script> alert('pop up message') </script>
+(html works from top to bottom > so scripts added at the end of the body )  > so if u want to access the body of html,(by getElementbyID('id1'))  , (console.log(nameval)) >>> comes unidientified
+    and u put scripts in head  >>> u wont be able to render the body of the html as scripts are placed before body of html
+
+<scripts defer src ='js.js'>   = in case u put this script tag in head , it wont throw error !
+Shft + enter    in console > write multiple line code 
+
+js is Single threaded because it runs single proccess at a time   >  thats why its made for web server  only crud 
+python is multi threaded    > it runs multiple proccess at a time >  used for proccessing requests , ML , Facial recogntion
+[here server does the processing and give details , so multiple processing is where node will fail because of single thread , its only for crud operations ]
+[so python works for multi threaded for facial recogntion  , ML ]
+Using variables loads up the RAM > which makes cpu to use run 2x to run which makes it lag 
+[dont use var , use let as it dispose variables after creation which frees up the memory , otherwise use IMMEDIATE INVOKE function]
+ 
+
+data types :-
+    primitive (immutables)  - bool , string , number , null , undefined , symbol    |  primitive means old legacy data types 
+    # cannot be changed 
+    non primitive (mutables) - object , array    
+    # can be changed 
+
+    console.log('hello mr tushar\"s')   >   use \" for both quotes
+    [null = empty,absence of value ]  # done by purpose    let x = "" ;
+    [undefined = default value for variable - when u dont define it ]  # done by default 
+    
+    console.log(typeof(age))    # 10       , typeof  
+
+    variables  ( Creation ) - reserve words cant be used as variable name 
+    var age = 10              ,var age   =  undefined
+    const = fixed variable                       
+    let x = 67 , y = 'tushar' , z;       =  undefined
+    (b)   >   /d   >  m* >  a+  >  s- 
+
+    var x = 'tushar'
+    console.log( `hello  ${x}`)  works with  `${variable }`
+
+    var user ;
+    alert(user ?? 'guest')    >>> if user is undefined , not to get error 
+
+    Escape sequences are same for the console >>> use \n, \t , \\  , \"
+    [idiot it wont work on html page  , use <br>] for that , html rules doesnt change 
+
+    let = block scope 
+    var = function scope 
+    const = fixed , but can be added , as we dont reassign the const >>> we mutate it by adding value by push 
+
+TYPE CONVERSION
+    String()    == same ==       .toString()
+    Boolean()  Number(bool) >>> false = 0 , true = 1  
+    Number()
+    parseFloat()
+    new Date()
+    Array.from(var)
+
+
+
+CONDITIONAL STATEMENTS 
+    if (){}
+    else if (){}    
+    else() {}
+
+    &&    and 
+    ||     or  
+    !     not 
+
+    same variable  changed inside block will change the outer or global as well 
+    y = 2 
+    if (condition){
+        var y = 3 
+    }
+    console.log(y)     # 3   
+    | if u use         let y = 3  , then y == 2 only    >>> this is known as block level code for y variable  
+
+
+    TERNARY = single line  if else | not for  multiple if  else statements or expressions 
+    var isx = 21 ;
+    let option = isx == 21 ? 'tushar its 21 only ' : ' no tushar its not '; 
+    console.log(option)
+
+SWITCH   = for strict comparison of value x and input_matching !
+    var x = output
+    switch (x){
+        case 'input_matching':{condition }
+        case 'input_matching':{condition }
+        default:{condition}
+}
+
+
+LOOPS 
+    var variable = 1
+
+    while(condition until true ){
+        statment of execution |console.log()
+        increment | variable++  
+    }
+
+    DO WHILE    =  EXECUTES ATLEAST ONCE 
+
+    do {execution statment 
+        increment ++ }
+    while(condition until true )
+
+    FOR = no need to have seperate variable for initializtion ,condition, increment
+    for(i=0;i<5;i++){
+        execution statment
+    }
+    # in for loop > FIRST time = 
+    it EXECUTES counter variable ;               counter = 1
+    then it goes to condition ;
+    then prints or do execution of statment 
+    and finally increment                        [it looks where looks for the condition ]
+
+    print in new line  >>>                document.write('<br>') }
+
+
+
+Functions used for DRY - dont repeat yourself 
+    ( syntax )
+    function donothing(){
+        return 'tushar'            means > return will spit out something 
+    }
+    donothing()                 >>> if u dont return anything it comes undefined
+
+    funtion do(a,-b){           >>>  do(1,-4)
+        return a + b
+    }
+
+
+    // for loop  - iterate automatically 
+    (initializtion > condition > block executed > increment/decrement  ( > check condition >  again execution block) )
+    for( var i = 0 ; i < 10 ; i++){            i = means each iterations from (1 - 10 )  
+        console.log(i)
+    }
+
+    if / else syntax comes in()  
+    if (condition == true){}
+
+    FUNCTION IS JUST A VALUE (of any number , string , bool) anything in it , do whatever u want ! 
+    function ()  >  value will be called 
+    getnum       > function  is passed !  
+
+
+    function add(){
+        console.log(arguments)      arguments    = keyword for  n number of arguments
+        console.log(arguments[0])    [this is called array of arguments]
+    }
+    add(3,4,4);
+
+    | setTimeout(a,2000)   // (function , timeperiod )   > delays the output value |
+
+CALLBACK  > already defined function , that is passed inside the function  
+    - SIMPLE             = just display the function and call the same  function to display the result 
+    - CALLING 2 FUNCTION = create a function ,save the result & then call another function to  display the result 
+      TO DISPLAY RESULT 
+
+SCOPE 
+    VAR IS FUNCTION LEVEL SCOPE  function(){}
+    LET IS BLOCK LEVEL    SCOPE   {}
+
+    [inside ram only - we store variables ]   so when function gets closed {} variables inside {} gets deleted by RAM  
+   - global variable = defined outside the function or block  , can be accessed from anywhere  | same name of global var can be made 
+   - { local variable }   = defined inside the function or the block of the code , cant be accessed outside the function | same name of local var can be made 
+    [ Both global && local are independent from creating their variables ]
+   - if you use var and inside function use variable without var , let , const  {the inner variable will change the global var }
+
+ANONYMOUS - function without the name 
+    | IF  U CREATE  THE FUNCTION OR VARIABLE = WE WASTE THE MEMORY | THATS Y IT IS USED 
+    - must be saved inside variable 
+    | setTimeout(function(){},2000)   // (function , timeperiod )   > delays the output value |
+    - here we define the function , thus saved the memory and executed the function too ! 
+
+
+IMMEDIATE INVOKE FUNCTION = inorder to make it anaonymous and  inorder to execute it just call ()  > it will run the function     | 
+SAVE IN A VARIABLE
+    | we can thus create the function and run it , which will get deleted after use , saves memory
+    wrap funtion in ()  ( we use so that , inorde to submit the function whenever we load the function the button will be submitted automatically)
+var X =(function(){
+        console.log('tushar')
+    })()
+    | WE NEED TO WRITE CODE - THATS SAVES TIME AND TAKES LESS MEMORY  = otherwise it shouldnt hang 
+    - so global var takes more ram then local var , because local ram gets deleted inside the fucntion after Creation
+
+
+ARROW FUNCTION  [it return statements by default | does not have' this 'keyword > so cant access window with arrow ]
+    ARROW FUNCTION TAKES THE ELISICAL SCOPE (PARENT SCOPE )
+
+    var anonymous = (...num1) => num1 
+    console.log(anonymous(10,20)) ,
+
+    const x = (x, y) => x * y;  ,  ES6 
+     
+    var x = function(x, y) {    ES5
+    return x * y;  }
+    |                    var x = () => {}
+    |                    var x = o =>  o
+
+    arrays , objects and string can be accessed with indexing arr['name']
+    
+
+OBJECT 
+    // indexing requires string''
+    // cant be indexed by number  
+    obj.start() |  ['price'] | obj.Color.texture
+    
+    METHODS
+    person.name ='tushar'
+    person['personality'] ='unique'              | add new properties and elements  
+    for of   >>>  can't be iterated 
+
+    ITERATIONS 
+    For in   >>>  loops through object keys      |  for(key in  on){ console.log(key )} 
+
+    Object.keys(person).forEach(function (el){   |  Object.elements(array) > returns array.mapfunction onit 
+        console.log(el)})
+    Object.values(on).forEach( e => {console.log(e)} )
+
+    GETTER    return this.firstname              
+    SETTER    return this.firstname ='tushar'    
+    
+
+
+
+
+ACCESS OBJECT , FUNCTION ARRAY iniside ARRAY  AND OBJECTS 
+    var tushar = ['Programmer',22,'Digikull', myfunc, {name:'tushar'},['hoest',21]] 
+
+    console.log(tushar[3]())      // access funcion inside array 
+    console.log(tushar[5][0])     // access array inside array
+    console.log(tushar[4].name)   // access object iniside array  // 
+
+objects by  dot operator       obj.name , obj['function name']
+arrays  by  indexing            arr[0] , arr['name']
+
+
+
+ARRAYS = collection of data types 
+     array is accessed by arr[0,1,2] , NOT NAMES   X ['name'] X
+     array are objects only where specific index is assigned to each element 
+    arr = ['tushar',function()]
+    arr[1]()  > execute function
+    - can skip indexes as well , will be termed undefined 
+    - arr[4][2][1]  identify arrays inside array 
+
+    Forin  >>>  gives index number 
+    Forof  >>>  iterates over elements
+    for (key in values){console.log(key) }         arrays   in = index 
+    for (key of values){console.log(key) }         arrays   of = elements 
+
+
+
+    FUNCTIONS 
+    length , unshift ,  pop , push , forEach , filter ,  map , find , slice 
+    foreach - needs to specify true or false 
+
+    //function myfunc(){
+    //         return('executing Function')
+    // } 
+    // var tushar = ['Programmer',22,'Digikull',21,{name:'tushar'},['hoest',21]] 
+    // console.log(tushar[3]())      // access funcion inside array 
+    // console.log(tushar[5][0])     // access array inside array
+    // console.log(tushar[4].name)   // access object iniside array
+
+    // console.log(tushar.join(' - '))
+    // console.log(tushar.unshift())
+    // console.log(String(tushar))
+    // console.log(tushar.sort())
+    // console.log(tushar)
+    // console.log(tushar.reverse())
+
+    // var arr = [3,4,5,6,[4,5,[4,5,6,9,[5,4,7,9,0],7,9],6,7],1,3,6]
+    // ...arr[4][2][4].slice(0,3),10,
+    // ...arr[4][2][4].slice(3),               >>> go inside array inside array 
+
+
+
+
+LOOPS THROUGH EVERTHING  ( from element to console )
+
+    tushar.map(function(element){
+       console.log(element + 2) })
+
+    tushar.filter(function(element){
+        console.log( element > 4) })
+
+
+DELETE 
+    delete person.age;     >>> deletes attribute of the object 
+    delete values[0]       >>> deletes elements for [0] index 
+
+
+SPREAD  = [...arr]  > we get all elements  stored in arr to  var spread 
+    works both for object and array 
+    var arr = [2,3,4,6,32,1,4,4]
+    console.log(...arr)
+
+CALL by REFERENCE   = change one , have impact on all 
+    var arr = [2,3,4,6,32,1,4,4]  // stored in memory location = 2001
+    brr = arr                     // brr also points to location = 2001  so change in one == change in all 
+
+    brr = [...arr]                // here u take content of elements , so new location is taking place 
+    arr.push(255)  // call by reference 
+
+    console.log(arr)
+    console.log(brr)
+
+    Destrucuting  // both in arrays and objects 
+    nrr = { tushar: 'name', 'age': 21 }
+    var { age } = nrr
+    console.log(age)
+
+
+foreach , filter , map  , for of , for in ,[] >>>  works for both arrays and objects 
+    > we access arrays  by [indexing] or [0][4][5]
+    > we access objects by object.keys or person.age 
+
+FUNCTIONS USED ON ARRAY METHODS 
+    ARRAYS METHODS  =  NEVER RETURN VALUE - ALWAYS CONSOLE LOG IT 
+        USE MAP    > IF U WANT TO DELETE AND ADD ATTRIBUTES TO EACH ELEMENTS 
+        USE FILTER > TO CHECK AND FILTER OUT BOOLEAN VALUES 
+        USE REDUCE > HELPS TO COUNT WITHOUT VAR 
+
+    var x =        arr.filter(s => (s > 5 )).length
+    /              [   this is is an array ].use functions on top of it 
+  map , filter returns an array 
+  Q What about foreach ?
+
+
+
+QUESTIONS AND QUERIES 
+    In HTML, JavaScript programs are executed by the web browser. | then does pyhton gets executed by compiler ?
+     v8 for chrome to run the js 
+    its all c++ programs 
+    to execute programs 
+    chrome act as wrapper 
+    node allowed to run js 
+    (node js allows u run to run all js without chrome  ) , nodejs is  just a tool not a framework ! 
+
+    difference btw js(not for processing , data analysis ) single thread  and python (for ml , face regiontion ) > for multi thread 
+    HIgh level > assembly > machine code     like python , java 
+    scripting does not  need to be converted  like bash
+
+ use of var with variable , we can directly assign variable with its value 
+- Variables can be defined using var keyword. Variables defined without var keyword become global variables.
+- js is not strict , use usestrict so that u cant define variable without var 
+
+
+difference between document.getElementbyID('id-name').innnerHTML=''    >>> this changes the document data
+ and console.log()   >>> this displays the document data 
+- commments are saved in ROM   , variables stored in RAM 
+
+Why we use let  variable 
+    for(var i = 0; i <= 10 ; i ++){
+            setTimeout(function(){
+                    console.log(i)},1000) }  // setTimeout does not know what  i  variable is  ! 
+     all 10 printed 
+     var = functional scope , since for is not function  > its loop
+     for loop working =  i = 0 > condition > execution > incrementation > condition > execution 
+     i = 10 , then it executes the loop >>> so it prints the i = 10 
+     if we use let >>> we get iterations 
+
+LOCAL STORAGE   VS  SESSION STORAGE [session storage ends when browser is restarted ]
+    console > application 
+    > local storage [save some variables there ] > key value  (store inside local browser)
+        localStorage('name','tushar')
+    > session storage  [temporary storage ]
+
+    localStorage.setItem('name','tushar')  // create  objects [key:value] in local browser 
+    let ame = localStorage.getItem('name');// get item from localstorage 
+    localStorage.removeItem('name')// clear particular key
+    console.log(ame)
+    localStorage.clear() 
+
+    JSON.stringify(arr)  >>> converts array into string  
+        [without this , array will be stored as string ]
+        let v = localStorage.getItem('vegetables');
+        console.log(v.slice(0,10))                  // access array
+    JSON.parse(arr)     >>>  From string  back to array 
+
+
+DOM 
+    events   =  user's actions on the website 
+    FUNTIONS - are required so that we can access document and thus can manipulate it 
+    [without function - we can only have access with the console ]
+    Interact with  elements in html file by  accessing it by document 
+
+
+- onclick ="click me() " when user clicks | click me () called 
+     function click me (){
+        alert('user clicked the button ')
+    }
+    [function has been called with the button ]
+
+
+    var getdata = document.getElementbyId('id_name')   > since id is unique , can access single id only
+    console.log(getdata)                               > to get the code of html 
+    console.log(getdata.value)                         > to get the text or input field
+    [we get to fetch the element - ie the code for the element having id ='id_name' ]
+
+    var paradata = document.getElementsbyTagName('p')  > here u can get  multiple Elements of html (not id ) 
+    console.log(paradata)                              > get first para content 
+    console.log(paradata[1].innnerText)                > get second para's html content [since its an array ]
+    [so inorder to access html content >>> we access it by innnerHTML]
+
+    var a = document.getElementsbyTagName('a')
+    a[0].href="https://www.google.com"            > this anchor tag open google homepage 
+
+    divdata = document.getElementsbyTagName('div')
+
+    var para1=document.createElement('p')                      > this way we create the child , but we need to append to html parent 
+    para1.innnerHTML = 'para 1 , created from javascript'
+    divdata[2].appendchild(para1)                              >>> so we append the para inside the second div tag 
+    [ this way we add the child-para  to the parent class -div]
+
+innnerHTML = get html content 
+innnerText = takes out the text  
+with this function click me () all of elements get executed when user clicks the submit button 
+
+
+Es6 features  ECMAScript by ecma 
+    // SCOPE 
+            // function testing() {
+            //         let v = 'tushar malhan'  // immutables = means it saves in seperate location in memory 
+            //         function one() {
+            //                 var v = 'john pepper'   // changes var v   >>> changes statement  from tushar malhan to john pepper 
+            //                 console.log(v,'1')      // this v is block scope , so has its own value , not taken from var v (ie tushar malhan)
+            //         }
+            //         console.log(v ,'2')
+            //         one()                     
+            //         console.log(v ,'3')
+            // }
+            // testing()
+            // var which is closest to the function wrapper > gets printed []
+            // one() function is called because of [2 function (testing())] >>> so we need to call outer  function inorder to call the one function ()
+    // change in array is    var arr.push(3)                                         >>> MUTABLE 
+    // we dont change strings , we give another reference to it with another var     >>> immutable 
+
+
+Hoisting 
+    declare variables with value first        var  x = 5 ;     |  var x  > will result in error 
+    after DECLARATION only u can acces them !  console.log(x)    
+    MEMORY DECLARATION - HAPPEN when you save function in a variable so ,function saved in variable and executed before will be undefined 
+    functions are accessed from anywhere BUT WHEN SAVED IN VARIABLE > will consider as hoisting 
+    Anything saved in a variable will be saved in memory (const,let in temporary dead zone , var in memory)
+    
+    console.log( firstname);
+    var firstname = function(){console.log(5)}   # undefined in VAR 
+    console.log( firstname);
+
+    if u save variable with let and execute before declaration 
+    let firstname = () => {return 5 }             # error    in LET 
+
+    [ in case of let & const  , value gets saved in temporal dead zone - NOT stored in memory 
+      var = Function scope , values stored in memory - hoisting allowed 
+      let = block scope    , values stored in temporary dead zone - NO hoisting allowed  ]
+ 
+
+EXECUTION CONTEST 
+    Interact with browser > DOM > This document comes from window > interactions possibles because of Objects present inside Window 
+
+    this     > way of accessing something    >>> means window
+    function standard () { console.log('tushar',this)}
+    standard()
+    DOT operator = this.firstname   >  refers to the object's property   # john 
+
+    obj={
+            name:'tushar',
+            standard :function() { console.log('tushar',this)}
+    }
+    obj.standard()   >>> here called with DOT operator >>> will give obj     Not Window
+    var x = obj.fullname         > because EXECUTION HAPPEN without DOT 
+    x()                          >>> returns window now
+
+    ALWAYS SEE > WHEN U CALL/ EXECUTE FUNCTION WITHOUT DOT operator >>> GIVES WINDOW 
+    [EVERTHING IS SAVED INSIDE WINDOW - OBJECT , VAR ]
+
+    METHODS FOR  function     [ not used for return  ]
+    CALL - INSTEAD OF WINDOW - CALL OBJECTS property without using DOT operator with 'this' keyword
+    when u call standard function with call > to change value 
+    standard.call(obj)   >>> won't show window , when called without dot operator (this)
+    standard.call(obj,'tushar','malhan')  >>> pass arguments inside standard function
+
+    APPLY - SAME AS CALL - BUT WE CAN GIVE  ARGUMENTS INSIDE ARRAY []
+    standard.apply(obj,['tushar','malhan'])
+
+    BIND - Here execution happens when we call - like callback ,( call , apply cant be saved inside variable)
+    can be saved in a variable
+    let st = standard.bind(obj)       |    standard.call(obj) > calls it immediately 
+    st()
+
+                     EG  1
+            function standard (fname,lname){
+                console.log(this,'1')       // obj 
+                function normal() {
+                    console.log(this , '2 normal') // window
+                }
+                function arrow () {
+                    console.log(this , '3 arrow ') // obj  no 'this' in arrow  > so  goes to parent 
+                }
+                normal()
+                arrow()
+            }
+            st =  standard.bind(obj)
+            st('tushar','malhan')
+
+
+                            EG 2
+            var obj = {
+                firstname:'john',
+                lastname:'malhan',
+                age:81
+            }
+            let arrow = () => {                // gives window , because its not in function scope of standard()
+                console.log(this,'3 arrow')}   // and it goes to parent (where this = window )
+
+            funcion standard(fname,lname){
+                console.log(this,'1')           // obj = because its  binded down 
+                funcion normal(){
+                    console.log(this , '2 normal')  // window
+                }
+                normal()
+                arrow()
+            }  
+            st =  standard.bind(obj)            // if not binded like this , 'this' goes to window  
+            st('tushar','malhan')
+
+
+
+    NEW - constructor >>> create instances from the function or CLASSES 
+    funcion const (name , age , addr){                               funcion fact (name , age , addr ){
+        this.name = name                                                    return {
+        this.age  = age                                                     name , age , addr     }}   //if key value = same use key only 
+        this.addr = addr                                                      // result = undefine
+                                    
+
+    var peter = new const ('tushar',21,'haridwar')              var peter = fact('tushar',21,'utttrakhand')   // gives default value > window  
+    // now peter is instance of const function               // undefine  > as   this = window >>> which means it will be window.name  = peter , here window.name = will be define as peter not for peter object 
+    // it creates new object 
+    
+
+   [ getter and setter  return this.firstname() , return this.firstname ='tushar']
+
+
+CLASSES 
+    EVERTHING returns an object 
+    came so that u dont need to have different classes for different object attributes > as it would consume a lot of space 
+    create one class >>> create instances with different properties 
+
+    function person(name,age, addr){ // comstructor parameters 
+        this.name= name 
+        this.age = age 
+        this.addr= addr
+    }
+    var adam = new person('tushar',21,'hardwar')                // created instance of class person 
+    person.prototype.fullname = function () { return this.name} // returning  property from  the function
+    
+    prototype is the method of accessing the base class  NOT CREATING 
+    by prototype we created , fullname gets attached to the base class person 
+
+    SIMILAR TO ABOVE FUNCTION = behind the scenes it is a function  
+    class snake {
+        constructor (name){          // constructed parameter name 
+            this.snakesname = name   // > WHERE args  ARE PASSED
+        }
+        getname (){
+            return 'snake is '+ this.snakesname   // constructing method which returns  value 
+        }
+    }
+    var pyhton = new snake ('python')
+
+    //  here values get shifted , WHY >>> because in when defining parameters we define name first , so 1 arg will be assigned to name 
+
+
+
+    INHERITANCE = inherit attributes with extend , inherited instances can copy or overwrite parents class functions and attributes 
+
+    class snake {
+        constructor (name){          // constructed parameter name 
+            this.snakesname = name   // > WHERE args  ARE PASSED
+        }
+        getname (){
+            return 'snake is '+ this.snakesname   // constructing method which returns 
+        }
+    }
+    class viper extends snake{
+            constructor(name,age){   // where we create new attributes > age 
+                    super()          // use parent class attributes , use it mandatory to inherit parent class featues 
+                    this.snakesname = name   // use parent attribute THIS SNAKENAME USED FOR DEFINATION
+                    this.age =age  
+            }
+
+            getname(){               // overwrite name from parent 
+                return this.name 
+            }
+            
+    }
+    [with super ()  we inherit 3 objects  parents(snakesname ) , name , age ]
+
+    var viperra  = new viper ('blue viper ',30)
+    var viperrab  = new viper ('red viper ',20) // create new instances 
+
+    snakepit =[viperra,viperrab]
+    console.log(snakepit)           >>> we get array of objects 
+
+    //  Q 2 !  how can we use parents snakesname  
+    // this.snakesname = name      // assign the snakesname to name parameter 
+    // same way when we use to overwrite methods , so attributes can be overwritten as well
+
+
+
+REDUCE METHOD FOR ARRAY 
+    let r = snakepit.reduce((sum,item) => {             // sum is 1 arguments , item for each element
+        return sum(0) + item.getlength() + item.age     //  add methods , add attibutes 
+    },0)                                                // inital value of sum = 0 , can be anything   | like var count = 0
+
+    var x =[[1], [2, 3], [5], [3]]
+    let y = x.reduce((combine, item) => {
+            return [...combine, ...item]   // we spread the combine array , then all elements inside combine 
+    },[])
+
+
+ADD IN OBJECTS 
+    var result = {}
+    arr.forEach(key => result[key[0]]=key[1] ); // we put each eleemnt in result 
+    // we dont add elements by  X result.key[0]=key[1] X
+
+    var  process = arr => return arr.map( item => ({[item[0]}:item[1]}))}
+// put array inside arr  
+
+
+
+INFINITY ITERATIONS = array methods > forEach , filter , map , reduce , for of , for in 
+LIMITED  ITERATIONS = for(){} , while(){} , do while(){}
+
+
+
+
+
+
+
+
+
+

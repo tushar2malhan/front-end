@@ -1,0 +1,395 @@
+can be given inside head 
+or just after the body   = so that it can load the content 
+<body>  
+    <script>  
+        console.log("hello world !")  
+    </script> 
+</body>
+
+developer console - inside ur website when u look for page source 3inside console u get errors    
+
+
+
+console.log()  == print()
+
+
+Variables    -         define them with       var varibale_name
+    var a =78;                           # int 
+    var b ="tushar";                     # string 
+    console.log(a)
+
+ 1. store "string"
+ 2. store int 
+ 3. store objects ( dictionary )  
+
+Operators 
+    -                                  3 + 4   (here 3,4 = Operators    &    + = Operand)
+    unary        = single operand ( x = -x )  
+    binary       = two    operands( x = x+6 )    x = 450 + 4 
+
+    operand -  entity on which Operators operate  
+
+    + - * / **     ++  --
+
+
+String concatination   with  +  or   old_varibale.concat("new")
+    var num1 = 56; 
+    var num2 = 4 ;
+    console.log("value = " + (num1+num2))           >>> (inside paranthesis it adds)  otherwise it prints both values 8040  not (120)
+    console.log("value of a and c =" + a + c)
+    console.log("value of a and c =" +( a - c))
+
+    console.log("value of a and c = " + ( a ++ ) )  >>> increment operator     a +1  (++ a  adds  a  variable by 1 )    ( a ++   adds  it but doesnt print it )
+    /                          adds   a by 1 but dosent print it                        a = 81 but no print                 */
+    /                          adds   a by 1 and print it  by adding 2 to variable a    a = 82 now and will be printed      */
+
+    console.log("value of a and c =" +( --a ))                                          decrement value by 1  so now a = 81 */
+
+    console.log("value of a and c =" + " tushar")  or add  strings by var1+var2
+
+
+
+
+
+
+
+
+STRING functions              
+    = since we use function , so we use function_name()
+    = same variable name  will be overwrite
+
+    var name ="tushar is king"
+
+    `${name} is the king `                  = same like f'{string}    use single and double quotes inside =   $``
+        
+    name.length                   = check length of name varibale(tushar)  == 6
+    "\n \t \\ "                   = escape sequence charcater
+    
+    name.indexOf('s')             = gives first occurance  word in string           # check     indexOf
+        - gives s from tushar      == 2   
+
+    name.lastindexOf('s')         = last occurance from string                      # check     lastIndexOf
+        - gives s from last string == 8
+
+    name.slice(1,5)               = string slicing (start,end)
+    OR   name[3]   OR 
+    name.substring(1,5)           = here u can't give negative values !    ,  both used for slicing 
+
+
+    name.replace('is','=')         = replace string 
+    name.toUpperCase()             = change to Upper case
+    name.toLowerCase()             = convert to lower case                   #check toLowerCase   , toUpperCase
+    name.trim()                    = trim white spaces      (not space u give in between string)
+    name.charAt(2)                 = which characters lies at index 2
+ 
+
+
+
+Easy way to get ITERATION   =  like u used enumerate function in python
+    arr = ['tushar','malhan','programmer']
+    arr.foreach(function(element,index)){
+        console.log(element)
+    }
+
+    PRINTING EACH ITERATION in array 
+
+
+        let arr = [2,3,45,6,61,7,8,10];
+
+        for let(i =0; i < arr.length; i++){
+            const element = arr[i];
+            console.log(element)
+        }
+
+    ARRAY   = container of data types
+        arr = ['tushar','malhan',null,34,8.5,true]
+
+
+array methods !
+    arr.length()    - get length  ,     BUT WHEN ITERATED NO () USED !
+    arr.pop()       - element removed from last 
+    arr.push()      - adds to the add of the element 
+    arr.shift()     - removes first element 
+    arr.unshift()   - adds element to the 0 index 
+    arr.toString()  - converts array elements into string 
+    arr.sort()      - sort elements 
+
+
+
+
+
+
+
+
+
+VARIABLES   =  var  let  const
+
+    var y = new String("tushar");
+        console.log(y)             = alternative way to create string 
+
+    let a = "tushar"               = alternative way to create variable                     (instead of var )
+    .                               we use  it so that variables don;t overwrite each other 
+    {
+        let a ='malhan'            = inside block
+        console.log(a)             = will print malhan   , not tushar   >>> as    a = malhan  which is local variable 
+    }
+
+    const  =  fixed variable   ( cant be changed )
+
+    const a = "fixed variable value"
+    a = "even if we try to , we get error ! "
+    console.log(a)
+
+
+
+
+
+IF /elseif/ ELSE    STATEMENTS     works same like if else ladder in python
+
+    if (expression){
+        console.log();
+    }
+    else if(expression){
+        console.log()
+    }
+    else{
+        console.log()
+    }
+
+
+
+
+SWITCH CASE                    just like if else STATEMENTS
+    const cups = 45
+    switch(cups){
+        case 45:
+            console.log('value is 45 ')
+            break;                               # we use break = if we there is match of variable  so dont print other console.log 
+        case 4:
+            console.log('value is 4 ')           # we give another case , we there is match print it  , otherwise pass
+            break;
+
+        default:
+            console.log('value is none of those ')  # default is value if none of variable is matched , then it gets executed 
+            break; 
+
+    }
+
+
+  USE  {}    INSTEAD OF    :           Difference between python and javascript 
+
+
+
+
+
+
+LOOPS      for while do-while     
+
+
+for ( intialisation ; condition ; increment )            >>>  for ( let i = 0; i<100 ; i++)     
+  console.log(i)   
+  remember not to put ; in for loop , as it marks end of statment , thus console.log wont be printed 
+
+                                                                    
+while = here we give variable first 
+
+    let j = 0
+    while (j<10){
+        console.log(j)
+        j ++                or    j +=1      [same thing ]
+    }
+
+
+
+do-while  = here difference is that , it will run ATLEAST ONCE even if conditon is FALSE , after that it will check for condition
+
+    let k = 0
+    do {
+        console.log(k)           print k 
+        k +=1                    increment by 1
+        if (k==5){
+            break;               break when iteration reach condition
+        }   
+        if (k ==3){
+            k +=1
+            continue
+        }                    
+    
+    } while(k<10);                       here we give conditon outside 
+
+
+
+
+
+PRINTING EACH ITERATION [keys , values ] IN DICTIONARY 
+
+    let object ={
+        name:'tushar',
+        age :21,
+        status:'programmer'
+    }
+    for (let values in object){
+        console.log(values,object[values])
+    }
+
+
+
+FUNCTIONS      literally same as python functions , we dont use def here 
+
+    function greet(name,status="KING"){      >>> parameters can be ( default values )
+        console.log(`You know ${name} is going to be ${status} of the World !`)
+        let a= 'tushar malhan is the best '
+        return a ;
+    }
+    let name = "tushar"
+    let greet = "King"                       >>>  we define the variables 
+    f(name,greet);                           >>>  we define the function with the arguments 
+
+    - instead of console.log ,
+    we can return string by storing it into variables 
+    - can put function to the variable as well ! 
+
+Anonymous function         >>> we define dictionary like a variable 
+    let ob={
+        name:'tushar',
+        game:function(){
+            return "Black ops - Zombies";
+        }
+    }
+
+    console.log(ob.game())
+
+
+
+
+SCOPE 
+variables inside { a = 9 } are available and are local when we { console.log(a) inside }
+  -  a = 9 printed 
+
+if a = 2  defined outside {} , now we console.log(a) outside {} 
+  -  a = 2 printed 
+
+{var and console.log }
+ var and console.log      
+
+= WANNA MAKE THE VARIABLE GLOBAL
+let and var is used for making varibale local only  for their respective block    - so it won't be printed outside {}  
+ - if we use { i = 9  } when var i = 10  is given   >>> it prints 9 , as var is used for local , so it got modified
+
+TO make the variable global 
+use  i = 10  , it modifies all the variable , making it global scope 
+ 
+    // let i = 23
+    // console.log(i)
+
+    // function u (name){
+    //     i = 9 
+    //     console.log(i)            // local varaible modified into gloabl  I = 9  now printed 
+    //     return `${name} malhan`
+    // }
+
+    // console.log(u('tushar'),i)  
+
+
+
+PRINT CURRENT DATE 
+    let mydate = new Date();
+    console.log(mydate)                  
+    use functions like 
+    mydate.getTime()  , mydate.getFullYear()
+
+
+
+DOM MANIPULATION   = change or view websites html elements   Thus we  MANIPULATE  html elements
+    In ur js file    >  under inspect = we type 
+    document                =  prints all html , css  code of ur website !
+    ( access html page elements )
+
+document.innerHTML =  change any html element 
+document.innertext =  change inner text 
+document.write     = change and replace all content 
+
+add functions inside elements 
+<h1 onclick = "function_name()">  define function in js file 
+
+Methods of DOM 
+
+    document.getElementById('click')                                      >>> in ur websites document , give me element with id 'click'
+    document.getElementById('click').style.border="blue"                  >>> CHange element's border having id 'click ' element
+    document.getElementsByClassName('con')[0].style.background='yellow')  >>> change class elements .style.background color 
+
+    let a = document.getElementsByClassName('con');
+    a[0].classList.add('bg')                                              >>> add the class to the specific element 
+    a[0].classList.remove('bf')                                           >>> removes the class list from the element 
+    a[0].innerText   = get inner text written
+    a[0].innerhtml   = get html code 
+
+    b = a[0].createElement('p')  > create <p> inside element
+    b.innerText = "this is the created paragraph "  
+    a[0].appendChild(b)                   >>>   we append this child b to the element a 
+    a[0].replaceChild(b , c)              >>> replace b child with c 
+    a[0].removeChild(b)                   >>> remove child 
+
+    document.URL
+    document.scripts          >>>  get every info 
+    document.links                     of ur website 
+    document.images 
+
+
+    
+    console.log(document.querySelector('.con')) 
+    console.log(document.querySelectorAll('.con'))   >>> select all containers from the website code 
+
+
+
+
+EVENTS   =   whenever user does something , like move mouse or click something is called  event 
+
+    <button onclick = "clicked()"> click me </button>
+    function clicked(){
+        console.log('ok')
+    }                             onclick =   we get mesage 'ok'   when user click the button  | click me |
+
+    addEventListener('mouseover',function(){console.log('mouse over')})  - whenever user's mouse over container , it gets printed 
+    addEventListener('mouseout',function(){console.log('mouse over')})    - when users mouse out of the container 
+    mouseup 
+    mousedown     - we get notified when these events happen 
+
+    use document.querySelectorAll('.con')[1].innerText = "<b> New bold content added </b>"
+
+
+
+ARROW FUNCTIONS   - define functions without function name 
+    summ = (a,b) =>{                   this  >  is called arrow function 
+        return a + b             
+    }
+     s = e => console.log(e)
+
+Setimeout and Setintervals   = just like time.sleep()  /  repeat function 
+
+    log_karo = function_name
+    , time period we justify 
+
+    log_karo =()=>{
+        console.log('im log ')
+    }
+    Setimeout(log_karo,2000);       where output is served after 2 sec 
+
+    clr = Setintervals(log_karo,2000); =   keeps on repeating function after 2 secs
+       - clearInterval (clr)              =      will stop repeating this set interval function
+
+
+Local Storage  - visible to world
+    localstorage.setItem('name','tushar')
+
+
+json - java script object notation 
+     - used to exchange data over the internet
+
+object = {name:'tushar',length:1}
+json = JSON.stringify(object);            >>> convert string into json object 
+console.log(json)
+
+
+p = json.parse(`object`)                >>> convert json to string 
+

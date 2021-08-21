@@ -1,0 +1,172 @@
+                                                              TCP / IP 
+
+Interaction between two computers over the network through TCP/IP protocol suite takes place in the form of a client server architecture.
+Client requests for a service while the server processes the request for client.
+
+TCP/IP = application layer (http) > Transport layer(TCP) > Network layer (IP) > Data link layer (Ethernet - media for data transfer)
+The information flows downward through each layer on the host machine. 
+1. APPLICATION layer    - [DATA]         Http protocol is being used, so an HTTP request is formed and sent to the transport layer.
+2. TRANSPORT layer      - [SEGMENTATION] TCP assigns some more information(like sequence number, source port number, destination port number ) to the data coming from upper layer so that the communication remains reliable i.e, a track of sent data and received data could be maintained.
+3. NETWORK layer        - [PACKETS]      IP adds its own information over the data coming from transport layer. This information would help in packet travelling over the network.(sender and receiver IP address)
+4. DATA LINK layer      - [FRAME]        makes sure that the data transfer to/from the physical media is done properly -Ethernet
+
+Now, at the target machine (which in our case is the machine at which the website is hosted) the same series of interactions happen, but in reverse order.
+and packet sent is with a sequence number to each packet sent , when packet reaches destination layer TCP acknowledges with seq number , if receiver didnot respond - it resends the package == which makes sure TCP gets no packet lost  
+
+- A combination of IP and port on both client and server is known as four tuple. This four tuple uniquely identifies a connection
+- These standard port numbers are generally chosen from 1 to 1023. The well known ports are managed by Internet Assigned Numbers Authority(IANA).
+- servers run on standard port numbers , clients dont  - because clients connect to server - do the work - then disconnect
+(Also, since clients need to know the port numbers of the servers to connect to them, so most standard servers run on standard port numbers.)
+- clients port range from ( 1024 - 5000 )  , PORT NUMBER HIGHER THAN 5000 - are for reserved SERVERS 
+- tcp = headache , need connection alive always, assurance of message   UDP - connectionless , no assurance of message received eg-phone call
+
+127.0.0.1	Refers to localhost
+When you call an IP address on your computer, you try to contact another computer on the internet but when you call the IP address 127.0.0.1 then you are communicating with the localhost. 
+Localhost is always your own computer. Your computer is talking to itself when you call the localhost. 
+Your computer not always directly identifies the local host. 
+Within your personal network localhost has a separate IP address like 192.168.0.1.(for most cases) which is different to the one you use on the internet. 
+This is usually dynamically assigned by the internet service provider (ISP). Localhost can be seen as a server that is used on your own computer.
+TCP/IP recognizes from the first block (127) that you don’t want to access the internet, you are calling yourself instead. This then triggers the loopback.
+
+Localhost is a top-level domain reserved  to test web applications [Web servers ]and programs.
+If you want to set up your own test server on your PC to address it through the localhost, right softwares are needed.
+Softwares such as XAMPP specifically designed for use as a localhost can be used.
+
+
+WHY TCP/IP model ?
+- for diverse connection path
+- for end to end hidden encryption 
+
+
+HTML tags are used to help render web pages as well in the Browser.
+HTTP is a protocol for transferring the hypertext markup language pages from Web Server to Web Browser. 
+For exchanging web pages between Server and Browser, an HTTP session is setup using protocol methods (e.g. GET, POST etc.)
+
+HTTP (hypertext transfer protocol) 
+> appication level protocol 
+> foundation of data communication for www (internet) since 1990
+Provides a standard way for COMPUTERS to communicate with each other
+is a TCP/IP based communication protocol that delivers data for html files , image files and query results.
+default port is 80 , but other ports can be used too
+     
+     http = connectionless - is request and response based on client or server
+     http client (browser) initiates http request and he waits , server processes requests and responds back to client
+       - any type of data can be exchanged if client and server can handle the content (by specifying MIME-type)
+       - STATELESS = both client and server knows about each other during request , afterwords both forget each other
+
+client > HTTP < server <> server-side script <> Database
+
+
+
+client side scripting is open to the world and server side scripting is hidden from users
+python was made for solving compulation programs
+(earlier in server side were php , asp , java ) but now with popularity with python > we use it as server side scripting 
+creating frameworks >>> Django and Flask
+
+
+client sends request to server in form of request method  , URI , protocol version 
+followed by MIME-like message containing request modifiers , client info , body content over TCP/IP connection
+
+server responds with status line , including message protocol version > with success or error code 
+followed by MIME-like message containing server info , body content
+
+
+parameters  - for constructing request and response messages  while writing http programs
+. HTTP Version                      = HTTP/1.0  or HTTP 1.1
+. URI(uniform resource identifiers) = string to identify name, location or resource
+    eg - http://abc.com:80/~smith/home.html
+. date\time formats                 = presented in GMT without exception
+. content encodings                 = indicates algorithm has been used to encode the content before it's passed over network
+    eg - Accept-encoding: gzip
+. Media types                       = uses internet  media types as content type and Accept header fiels for data typing
+    eg - Accept: image/gif            All the media type values are registered with INTERNET ASSIGNED NUMBER AUTHORITY (IANA)
+. Language tags                     = anguage tag is composed of one or more parts = a primary language tag and empty series of subtags
+    eg - en, en-US, en-cockney, i-cherokee, x-pig-latin
+
+
+SO,
+An HTTP "client" is a program (Web browser or any other client) that establishes a connection to a server
+for the purpose of sending one or more HTTP request messages. 
+An HTTP "server" is a program ( generally a web server like Apache Web Server or Internet Information Services IIS, etc. ) 
+that accepts connections in order to serve HTTP requests by sending HTTP response messages
+
+CLIENT (web browser) > http request > server (apache server , iis)
+             client <  http response < server
+
+           Using URI > http identify resource to establish connection
+           after connection ,messages are passed in MIME 
+           (these messages include requests from client to server and response from server)
+
+Header Fields
+HTTP header fields provide required information about the request or response, or about the object sent in the message body. 
+There are four types of HTTP message headers:
+
+General-header  : have general applicability for both request and response messages.
+Request-header  : have applicability only for request messages.
+Response-header : field have applicability only for response messages.
+Entity-header   : define meta information about the entity-body 
+
+All the above mentioned headers follow the same generic format 
+message-header = field-name ":" [ field-value ]
+
+
+              REQUEST MESSAGE FORMAT
+
+An HTTP client sends an HTTP request to a server in the form of a request message which includes following format:
+- request line - request methods (GET ,HEAD , POST , PUT , DELETE ,OPTIONS TRACE)
+- zero or more headers
+- message body(html)
+
+
+
+
+HTTP METHODS FOR REQUEST
+
+GET    = retrieve info only from server using URI 
+POST   = send data to server - html forms (customer info,file upload)
+PUT    = replaces content 
+DELETE = removes all current representaions of target
+CONNECT= establishes a tunnel to server 
+OPTIONS= describe communication options for target resource
+
+
+
+REQUEST MESSAGE 
+
+Now let's put it all together to form an HTTP request to fetch hello.htm page from the web server running on tutorialspoint.com
+
+GET /hello.htm HTTP/1.1
+User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
+Host: www.tutorialspoint.com
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+Connection: Keep-Alive
+
+Here we are not sending any request data to the server because we are fetching a plain HTML page from the server.
+ Connection is a general-header, and the rest of the headers are request headers.
+
+            RESPONSE MESSGE FORMAT
+
+status line = http version
+Status code = 100(informational) 200(success) 300(redirection) 400(client error) 500(server error)
+
+Examples of Response Message
+
+Now let's put it all together to form an HTTP response for a request to fetch the hello.htm page from the web server running on tutorialspoint.com
+
+HTTP/1.1 200 OK
+Date: Mon, 27 Jul 2009 12:28:53 GMT
+Server: Apache/2.2.14 (Win32)
+Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT
+Content-Length: 88
+Content-Type: text/html
+Connection: Closed
+<html>
+<body>
+<h1>Hello, World!</h1>
+</body>
+</html>
+The following example shows an HTTP response message displaying error condition when the web server could not find the requested page:
+
+if site not found then >> HTTP/1.1 404 Not Found    , 400 bad request = server couldn;t understand
+

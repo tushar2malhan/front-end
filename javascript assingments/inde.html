@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href = "c.css">
+    </head>
+    <body>
+        <div class = "container">
+            <h1>TIP CALCULATOR</h1>
+            <div class = "wrapper">
+                <p>Enter your Bill Amount?</p> 
+                <input type = "text" id = "amount" placeholder="Amount to be paid"> ₹
+                
+                <p>How was the service?</p>
+                <select id = "services">
+                    <option value = "20">20% - Excellent</option>
+                    <option value = "10">10% - Medium</option>
+                    <option value = "5">5% - Not so good </option>
+                </select>       
+                
+                <p>How many people are sharing the bill ? </p>
+                <input type = "text" id = "persons" placeholder="Number of people sharing the bill">
+                <button id = "calculate">CALCULATE</button>
+            </div>
+            
+            <div class = "tip">
+                <p>Tip Amount</p>
+                <span id = "total">0</span>₹
+                <span id = "each">each</span>
+            </div>
+            <h3 id ='totalTip'> TIP AMOUNT </h3>
+            <h4 id="t"></h4>
+        </div>
+
+        
+
+        <script type = "text/javascript" src = "2 assignment.js"></script>
+    </body>
+</html>

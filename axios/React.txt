@@ -1,0 +1,311 @@
+ React is Library of js  (angular is framework built by google )
+why = in js we need to go to each element to view it or change it 
+[ framework is like an architecture  mvc model view controller >>> have framework runs the show where  it tells you where to write what and make things work ] 
+[ Library there's no architecture >>> in Library default features are specified to code > import me  ]
+
+React is built on top of js  > so react gets converted into js 
+// tools required for react like webpack (for bundling - grouping files in chunks ), 
+//                               babel (conversion of code from react to vanilla js ) , 
+// npm(node packer manager)      node.js (runs js without chrome) like window object  for chrome , node for js |npm registry where all packages are stored 
+
+WHY REACT ?
+for single page app = it dosen't relods the page when user gets shifted 
+React creates a VIRTUAL DOM in memory = Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the browser DOM.
+Clear web components
+
+components = shorten your html code , so can be easily readable for html , js code
+JSX = javascript  syntax extension 
+npm = packet manager - which downloads packets 
+
+
+
+npx create-react-app demo_1  =  boilerplate  (installs all packages for react)    - single time for creation of the app / in your folder 
+npm start                    =  start the app on localhost:3000
+Open app.js = in SRC    > inorder to develop react application
+use js-react in search  > inorder emmit 
+import './App.css';          = we include our css files in the app 
+
+        Q Face any issue ?  cd into folder/file  and do npm start
+        
+
+
+
+
+index.js  = HOW and WHAT to display data 
+    import React from 'react'
+    import reactDOM to render(What to render  , where do i want to render it ) 
+    import App from './App';                // We import the function name or class name from files  
+
+    reactDOM.render(                        // what to create , what element needs to be added , from where 
+        <h1> Hello </h1> or < APP/>,        // use function created in app.js 
+        document.getElementByID('root')
+    )  
+
+    BABBLE is the tool via which it converts react code in jSX 
+   
+WIthout BABBLE code is 
+    reactDom.render(
+        React.createElement('h1', null ,'tushar malhan'),    == JSX 
+        document.getElementByID('root')
+    )   
+    - THATS Y WE IMPORT REACT - because it allows to use JSX  and create elements
+    - Mutliple JSX needs to be Wrapped inside  <div> tag 
+
+
+We create js file > inside html JSX > js code by { 3+4 } 
+|       cant create function or conditional statments only expression and variables allowed 
+
+jSX = under render > we cant type js so we use JSX to use html + js with {}
+{ use javascript code }
+
+index.html ['root']   >   App.js [ functions created for app ] >  index.js [ render(what, where)  DISPLAY CONTENT ] 
+
+2 types of components  in react  | basic difference is that in class >>> we can use the state , and is low performance as its bulky in nature because of dependencies 
+- function base       = function > return ( Whatever u feel like )
+- class base          = class > constructor > render used to >  return (statments )
+Each components file needs to be exported , so that it can be imported in App.js
+[   because in index.js we render the App function() , In document.'root']
+
+ReactDOM.render >>> used only once - connection btw react app  and DOM  in index.js
+class > render  >>> this render used in class to  return elements 
+
+app.js > dashboard , landing_page > header 
+Output >>> dashboard , header , landing_page [ inisde components given priority]
+
+
+INPUT PROPERTIES 
+
+    label for = 'id_name'
+    <input value ='tushar' id="id_name" readonly size ="50"  maxlength ='4' >
+    min ="2000-01-02"    >  for date  type 
+    max ="1979-01-02"    >  for date  type 
+
+    multiple   > for multiple files 
+    required  > must be filled
+    autofocus > highlight and mark it up 
+    width="48" height="48" size = '50'  > input box css 
+
+    list in input 
+    <form>
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+    </form>
+
+BROWSER EVENTS 
+    click ,context menu , mouseover ,out , mousedown , up ,move 
+
+    onclick = {toggle}
+    toggle = () => { 
+        let para = document.getElementByID('paragraph')
+        if(para.style.display!='none'){
+            para.style.display ='none'         toggle button will show and hide content 
+        } else{
+            para.style.display ='block'
+        }
+    }
+        let para = document.getElementByID('paragraph')
+        paragraph.addEventListener('mouseover' , function run(){
+            alert('mouse over para ')
+        })
+
+
+
+
+
+
+this.state = {} state object [gets updated on each component = AUTO SUBSCRIPTION ]
+    < input value = {this.state.name} > onchange {(e) => { this.setstate({name:e.target.value }) }}
+    access this.state by input          when we click on input ontext box 
+   
+    change any object's property >>> we use setstate 
+    onchange = function gets called { (e) => {} }   
+    props =  MEANS TAKING OBJECT ATTRIBUTE FROM PARENT = sending value to another component 
+    WE created 
+    | <div> {this.props.dummy}</div>  in landing page 
+      so we include this object dummy in dashboard  after we include the landing page 
+      <landing_page dummy={this.state.dashboard}/> in dashboard page 
+      | where we give attribute value by 
+      | this.state = {
+          dashboard:' value sending to landing created in dashboard'   == value we create 
+      } 
+
+      TO CHANGE IT > WE NEED SET STATE 
+      handlechange = val => { this.setstate ({ dashboard:val }) }
+
+      | we give value in current or some other file by 
+        <landing dummy ={this.state.dashboard}   />
+
+      | onclick = we need function , setstate ({which itself is a function })
+
+      there is only one this.state 
+
+
+render must comes inside the class! or it will waste ur time 
+
+this.state = attribute of class  > setstate >>> updates the states  from everywhere [because of SUBSCRIPTION function ]
+[ cant change it directly , like this.state.name ='XX'X]
+[so THINK  it like a variable which can ACCESSIBLE TO ALL COMPONENTS ]
+
+class = react 
+render = js 
+return = html 
+
+
+Q set current class attribute > change it in current class 
+    
+    DEFINE THE STATE  this.state = {name:'tushar' }
+    ACCESS THE STATE  {this.state.name}
+    CHANGE  THE STATE WITH NEW VALUE  < input type="button" value ='click' onclick = { () => {this.setstate({name:'changed name '}) } } />
+
+Q use  same attribute state to put to other file [component]   from parent to child 
+    
+    DEFINE THE OBJECT WITH KEY = { VALUE } IN CHILD COMPONENT  dummy ={this.state.age}
+    ASSIGN THE KEY in html tag =            {this.props.dummy}
+
+[can never ever change props directly > go to parent class ]
+ <button onClick={ () => {this.setState({name:'TUSHAR MALHAN'})}} > chnage name for props </button>   change name 
+
+
+Q Now change parent state from child component
+        since parents attributes and props cant be change > we use setstate 
+    CREATE FUNCTION IN PARENT 
+        handle = v => {this.setState({age:v})}
+    ASSIGN  THE FUNCTION IN CHILD COMPONENT IN PARENT FILE 
+        <header handle={this.handle} />
+    ASSIGN THE FUNCTION IN CHILD CLAS COMPONENT IN CHILD FILE IN A BUTTON 
+    <input type="button" value ='age' onclick = {() => { this.props.handle(22) }} />
+        [ we define the onclick function with setting argument () ]
+
+Q Name feeded in input , needs to be present in all components 
+    In parent we DEFINE FUNCTION 
+    handle = v => {this.setState({age:v})}   [same as above]
+    
+    In child 
+    <input type="text" onChange ={ (e) => {this.props.hname(e.target.value)} }/>
+        WAS CONFUSED HERE , WE JUST GIVE VALUE INSIDE (e.target.value)
+        [AS THE ABOVE FUNCTION REQUIRES ONLY v in setstae ]
+    
+    
+
+
+    SUMMARY 
+ 
+ACCESS STATE  =  {this.state.value}
+
+IN CHILD      =  {this.props.key}    | < Child key = {this.state.value} /> 
+        ANY ATTRIBUTE ACCESSED OUTSIDE OF CLASS CONSTRUCTOR WILL BE MADE FROM PROPS [WHETHER CHILD OR PARENT COMPONENT 
+        PROPS CAN'T BE CHANGED WE USE SETSTATE 
+
+CHANGE STATE  = onClick={(e)=> {this.setState(value:'new_value')} } IN BUTTON  OR INPUT ONLY , CAN'T SET DIRECTLY 
+CAN BE DONE BY DEFINING FUNCTION ONLY 
+
+FUNCTION  IN PARENT    = handle = () => {this.setState({val:'new_val'})}   CREATE FUNCTION SEPERATELY , THEN USE THIS FUNCTION WITH CHILD PROPS 
+IN CLASS                {this.props.handle()}
+
+FUNCTION  IN PARENT    = handle = val => {this.setState({val:'val'})}      WITH ARGUMENT , GIVEN TO CLASS 
+IN CLASS                {this.props.handle('ok')}
+
+
+EVENTS  
+<button  onClick ={this.shoot}>submit  </button>          
+WHERE shoot IS A FUNCTION ()  DEFINED IN CLASS 
+
+You get access to the INPUT value by using the event.target.value  OR   event.target.name 
+[WHEN WE USE THIS FUNCTION WE SET THE STATE TO BE e.target.value SO >>> e.state.value GETS INPUT DEFINE VALUE ]
+[ I FACED ISSUE , AFTER SETTING THE setState of total >>> i was calling function inside js which is wrong 
+>>> I CHANGED setState OF TOTAL - USE THAT FOR MODIFIED VALUE  ]
+ //  check the setState   , now v = input value = e.target.value
+
+
+
+// issue with importing name from js file > do we need to use camelcase for typing clasname 
+
+// li key = {} >>> in list we need key , because each value can have unique identification 
+// how to include js:react feature automatically in all new files   >>> use extension .jsx inorder to emmit html tags 
+
+//  in app.js we dont import react from react.js  >>> because we import React from 'react'
+
+
+lifecycle method = constructor [ for this.state {objects} ] > DidMount [ api call] > DidUpdate [updates]  > unWillMount [ constructor dies ]    USED IN CLASS \
+hooks            =          USED IN FUNCTIONS 
+
+rendor = displaying something in DOM 
+
+
+
+inline styling  =<h4> style = {{ display : 'inline-block' }} > one for js {} > one for js {} </h4>
+block styling   =<h4> style = { style.userproperties} </h4>
+    <h4> style = { {...style.userproperties, ...style.redcolor}} </h4>
+
+external styling = in new file 
+
+imp './css/style.css'
+
+.container{
+    width :20%;
+    float : left 
+}
+div classname ="container"
+
+
+
+Array destructuring 
+- unpack values from array and object 
+- usally we get each value of array by indexing[0][1]
+-- VIA es6 we access all with single line
+let [top1,top2,var3,var4] = arr
+let [top1,,,,toplast]     = arr  > get first and last elements
+
+Object destructuring
+const { count } = this.props
+in  child  >>> {count }
+
+use object destructuring or this.state inorder to bring state from parents 
+this.state = {
+count : this.props.count }
+
+
+mounting - constructor , getDerivedStateFromProps , render , componentDidMount , render
+update   - this.setState() , getDerivedStateFromProps , shouldComponentUpdate  , getSnapshotBeforeUpdate , ComponentDidUpdate
+Unmounting - componentWillmount 
+
+
+WHEN  CURRENT PROPS CHANGE  , YOU WANT  CURRRENT STATE VALUE  TO BE CHANGED SO WE USE THIS METHOD 
+static getDerivedStateFromProps(props,state){
+        if(props.count != props.state){         # IF NOT TRUE 
+            return {count:props.count}          # SET PARENT STATE TO CHILD STATE 
+        }
+        return null                             # ELSE NULL 
+    }
+componentDidMount(){
+    console.log(data)     WE USE IT ONCE FOR SERVER CALL , API's
+}
+
+static shouldComponentUpdate(nextProps,nextState){
+        if(nextProps > 8){
+            return False
+        }
+        return true 
+        console.log(nextProps , this.props )}   IT COMPARES NEXT-UPDATED PROPS WITH CURRENT STATE 
+
+componentWillUnMount(){
+    clearInteval (this.intervalfunc)}           U WILL NOW LOST REFERENCE TO THE COMPONENT 
+
+
+
+context API 
+drill it down so that u dont need to pass states to every child 
+
+import React , {createContext} from 'react'
+export const dataContext  = createContext()     it allows to retrieve and inject data in application
+
+
+export {dummy }
+we try to import in {dummy} because it is a function component created in another class , so to bring the function component we import {dummy } 
+- when we export the dummy we  do   >    export { dummy } |  not export dummy |  because it is an object 

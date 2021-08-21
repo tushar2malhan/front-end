@@ -1,0 +1,44 @@
+download bootstrap or use  cdn 
+use as many componenets u want (like navbar , card , progresss ! )
+
+success = green , danger = red , warning = yellow colors 
+col-sm- = small size , col-md- = medium  , col-xl- = xtra large size , col-lg- = large devices 
+(.col-sm-md-lg-xl-)
+
+class="container" > which means u pack everything in a box  and center the things
+class="container-fluid" > which takes whole block like a div 
+grid system   >>> bootstrap works on it 
+class="row"   > give rows   (take as much want )
+class="col"   > give columns(give as much as u want ) 
+#  if u give class="col-5" class="col-5" to 2 boxes , 2 space is left  > which leads to untilisation of columns !  (use that much that give total 12 only )
+total 12 column space 
+
+
+class=navbar-dark bg-dark  ( make the navbar dark )
+class = container (fit in center) , container-fluid = uses full width  like div 
+class = mt-0;	(mt = margin top   | margin = outside space |mt , mb , my = for up & down  , ml ,mr , mx = for left & right  ) , 
+		  `class = pt-4 (padding top pt | padding = inside space) 
+class=img-fluid  (make images responsive )
+class= float-left  , float-right (to shift their positions )
+
+the link and js scripts are taken from web url  
+
+
+
+ image closed in div tag , still its showing blur > always save ur image in ur local host first !  >>> use    www.source.unsplash.com for ur images 
+
+class ="row featurette d-flex justify-content-center align-items-center"  >>> give all content in middle !
+
+does padding and margin work under container class only ?  > yes 
+Q why does my mt-2 doesnt work sometimes 
+
+ issue with navbar   > copy the js  script code and do the following ! 
+ issue with styling in navbar > i didnt copy the css file in my project !  
+
+
+RATE UR WEBSITE BY SEO = search engine optimization 
+(inorder to increase search engine traffic )
+> by using seo tags and 
+<meta name = "description" content="why u using this ? ">
+
+host pages on github pages settings >  where u set up theme and use the published url for the master branch 

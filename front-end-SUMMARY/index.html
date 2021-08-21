@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+          <title> Html</title>
+          <meta name ="myhtml" content ="showcase summary" />
+          <meta name ="keywords" content ="showcase summary" />
+          <link rel ="canonical" href ="car.html" />
+          <link rel ="icon" href ="wow.jpg" type ="image/jpg">
+
+          <style> 
+              
+          </style>
+
+          <script >
+              alert("hello") 
+          </script>
+
+          <noscript>
+            please enable javascript 
+          </noscript>
+     
+     </head>
+
+          <body>
+
+              <a href = "#local" target=_self title = "google"> Read more  </a>
+            <p id = "local">  <!-- creating local link with id #  >>> which allows to get on specific line ! -->
+               this is my content for tushar malhan 
+               tushar using link for local link ! 
+            </p>
+
+            <p> <!--creating email link -->
+            Contact us on <a href = "mailto:tusharmalhan@gmail.com?subject=hello world" >  tusharmalhan@gmail.com</a>
+            </p>
+
+            <a href = "https://google.com" target =_blank > <img  width ="200" height ="200" src = "wow.jpg" alt='my_pic '>  <!--link the website to the  image  ! -->
+            </a>                                                                       
+               
+
+
+
+
+          <img src="wow.jpg" usemap="#image_map">
+                <map name="image_map">                                             <!-- use image to connect multiple links from the image ! -->
+          <area alt="tushar" title="tushar" href="https://www.tusharmalhan.com" coords="1132,321,78" shape="circle">
+          <area alt="google " title="google " href="https://www.google.com  " coords="504,96,951,701" shape="rect">
+          </map>
+
+
+          <form method ="GET/POST" action= "html.TXT" encrypte ="multipart/form-data"> <!--user forms-->
+            <div>
+                name:</br>
+                <input type ="text" size:"20"  placeholder = "enter Firstname">
+                <input type ="text" placeholder = "enter Middlename" required >
+                <input type ="text" placeholder = "enter Lastname">
+                <input type ="email"placeholder = "enter email" autocomplete="on">
+                <input type ="range" min="1000" max ="500000">
+                <input type ="file" multiple >
+                <input type ="radio"> Male 
+                <input type ="radio"> Female 
+                <input type ="checkbox" > Money
+                <input type ="checkbox" > Love
+
+                <br>
+                <br>
+                <hr>
+                <input type ="text" list ="search" >
+                <datalist id ="search">
+                    <option value ="apple"> 
+                    <option value ="strawberries">      <!--we link this list with our search-->
+                    <option value ="applepie"> 
+                    <option value ="car"> 
+                </datalist>
+                
+                <label for="fname">First Name</label>
+                  <input type ="text" id ="fname"> <br>
+                  <input type ="submit">
+
+                <input type ="submit" >
+            </div>
+            </br>
+            <div>
+              <input type ="image" src ="wow.jpg" width = "100" height ="100">  <!--image as input button-->
+            </div>
+            
+            <textarea placeholder="Your content" rows="20">  </textarea>
+            <input type ="submit">
+          
+            <select size = "2" multiple>
+                <optgroup label ="POISON"> 
+                    <option value="1"> black coffee </option>
+                    <option value="2"> milk coffee  </option>
+                    <option value="3" selected> mocha </option>
+                </optgroup>
+
+                <optgroup label = 'FAT LOSS'> 
+                    <option value="1"> NO CARB SALAD </option>
+                    <option value="2"> NO MILK </option>
+                    <option value="3" selected> HIGH PROTEIN</option>
+                </optgroup>
+            </select>
+          
+          
+          </form>
+
+
+
+          </br>
+            </marquee direction = "down"> tushar is moving</marquee>  <!--move the list accorindgly -->
+            
+            
+            
+            <ol type ="i">My ordered list 
+               <li>list1</li>               <!--nested list ! same for ordered and unordered  -  can create multiple nexted mix list   ordered inside unordered -->
+               <ul>
+                  <li>coffe black , milk coffe with sugar , mocha</li>
+               </ul>
+            </ol>
+            
+            
+            
+            <dl>  <!--description list = like dictionary   dt = description tag !  dd = description for the key  -->
+               <dt>  black coffee </dt>
+               <dd> its  a black coffee for fat loss !</dd>
+               <dt>  coffee with milk </dt>
+               <dd> enjoyement coffee <dd>
+            </dl>
+            
+            
+            
+            ;<!-- <table>   <tr>  < th >  table row  columns < td > table data  |   >>> creating   table   -->
+            <table style="border:2px">
+              <caption> Table Heading </caption>
+               <tr>  
+                   <th rowspan ="2">Row 1</th> 
+                   <th>Row 2</th>
+               </tr>
+
+               <tr> 
+                      <td> DATA 1 </td> 
+                      <td> DATA 2 </td> 
+               </tr>
+               <tr> 
+                      <td> DATA 3 </td> 
+                      <td> <table border = "2"> 
+                                <tr> 
+                                  <td> columns </td>
+                                  <td> columns </td>
+                                </tr> <!--rows-->
+                                <tr> 
+                                  <td> columns </td>
+                                  <td> columns </td>
+                                 </tr> 
+                           </table>  
+                      </td> <!--nested table-->
+               </tr>
+               <tr>  
+                      <td colspan ="2"> <a href = "https://www.google.com">google </a> </td> 
+                      <td> DATA 6 </td> 
+               </tr>
+            </table>
+             
+             <div style = "border:1px"red;> random text </div>
+            <div> random text </div>  <!--takes full width and starts with new line -->
+           <span> tushar </span>
+            <span> malhan </span>    <!--takes minimal character space and does not start with new line ! -->
+              
+           <!-- comparison <iframe  src ="https://www.ndtv.com/"  height = "500" width = "1000">  </iframe>      =    show another website from ur current website ! -->
+
+            <audio controls >  <source src = "play.mp3" type = "audio/mpeg" >
+            </audio>
+          
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/HjGQ7jM1g3Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+          </body>
+ 
+</html>
+

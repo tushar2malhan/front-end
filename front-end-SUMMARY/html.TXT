@@ -1,0 +1,420 @@
+    THINK OF HTML CONTENT LIKE A BOX = EVERYTHING IS A BOX   , CREATE IT LIKELY !
+
+
+ Every website in the world is made of HTML & CSS 
+.html file > becomes the web page , any output will be printed on the webpage without any code 
+download any website > go to page source > ctrl s 
+
+
+SUMMARY   
+/* 	src is used in   		           >>>    img , iframe , audio , video ,  map  , src="app.js"
+	name ="Male" name="Male"  	     >>> use name attribute in  each input tag  so that only one radio box (user - input ) can be selected 
+	label in each input tag       	 >>> <input value ="ok"  >  for each input tage , where clicking on firstname - user get shifted to writing content part !  
+  <link rel ="stylesheet" type ="text/css" href= "style.css" >  >>> link css file in ur html page  
+  <scripts> app.js </scripts>      >>> link js files in ur html page 
+  
+
+QUESTSIONS 
+Q difference between of tables  
+ =  thead <td>, tbody <td>   >>> here table row and column|  how to add vertically 
+
+ why shouldnt we use 
+ =  <tr><th></tr>  <tr><td></tr>                  >>> theres no difference in using any method for creating the table !  , use any one of it ! 
+
+why my background image is shwoing blur ? 
+why my downloaded image is not showing blur     >>> close image in a div tag 
+
+
+
+
+
+
+
+
+
+
+BASIC 
+
+tags = <> </>
+2 types   - open and close
+one which will be opened and closed = because it has some content in it 
+second one  which contains pics , links ....   </img>  , </br>  
+
+
+<!DOCKTYPE html>    = tells browser what type of file/document we are giving  to the internet 
+<html>              = root of the document 
+<head >             = metadata includes (title , charactersets,links , scripts)
+    <title >        = title of the webpage 
+</head>             = closed the head tag 
+<body >             = started the body tag includes -
+    <!--comment-->> = comment 
+    <p> FIRst </p1> = first para in the body  
+    <h1>Head </h1>  = 1 heading   (has tags upto <h6> 6 headings starting from h1 to h6 )
+</body>             = closed the body tag 
+
+if opened , we need to close the tags as well 
+
+
+
+BRIEF 
+These types , styles ( width  height ) , classes ,  href  are generally inside elements only 
+check the synatx of opening and closing when making elements ! 
+check " " should be present inorder to make ur code work 
+found error when trying to redirect pages with anchor tags =  use correct index.html site inorder to make other html pages work with you 
+
+
+ELEMENTS                      = <body> <h1> - <h6> , <p> , <br> </body>
+
+ATTRIBUTES ( goes inside elements ) =  LANG     - <html lang = 'en '> 
+                                       
+                                       LINKS    -   THESE ARE GIVEN BY <a> ATTRIBUTE    =   CAN BE TEXT , IMAGE , MAIL , BUTTON , RELATIVE ( link to other html files )
+                                                  Link Titles                    = creating title inside href    <a href ="wwe.com" title ="go to wwe site"> WWE </a>
+                                                  open links on image            = by putting image inside links <a href="url"> <img src = "location"> </a>
+                                                  link to an email address       = by going inside               <a href ='mail.com'> send email </a>
+                                                  Use button as Link             = using button                  <button onclick="document.location='default.asp'">HTML Tutorial</button>
+                                       
+                                       IMAGES   - <img  src ='file' alt ='description' width ="400" height = "600" alt ="description"> 
+                                      
+                                       HEADINGS - <h1> Most important heading </h1>
+                                       
+                                       (print accordingly - <pre>  )   (horizontal break  - <hr>  )   ( break line - <br> )
+                                       
+                                       PARAS    - <p  style ="color:red" ; title = "tushar" ;background-color:blue > 
+                                                - <p  style ="font-family:courier;"> Your Content. </p>
+                                                - <p  style ="text-align:center  ;"> Your para   . </p>
+                                                - <p  style = "margin:0" ;         >             . </p>
+                                       
+                                       <mark>description</mark> </p>
+
+                                        <styel>    .prep_name {width ="500" height = "400"}   </style> 
+                                        CLASSES  - <img class = "prep_name" >  image gets class ATTRIBUTES , any element get this class attributes 
+
+style , href , target , type , b , pre , br , hr , width , height 
+table , border , colspan , rowspan                                
+
+'''
+
+
+Notes 
+. <h1> - can repeat these headings but think of it as the main heading of the book (should be 1 <h1>)
+       - h1 has the biggest font , h6 the smallest 
+
+.<body>
+- <p>  - can be inside <head> , <body>
+       - <b> inside para </b> = make words BOLD
+       - <i> tushar </i>      = italic 
+       - </br>                = break line
+       - <pre> content </pre> = content will look same as u type code 
+
+- <img  src='' , alt='' width ='400' height = 400>  />    = src - location of images  , alt - description of the image (wont show on website until theres an issue with the image to load )
+  - set width and height of the image 
+  - (if ur using chrome for getting image from C drive - it wont recognize it because the chrome dont has access to it !)
+  - google use this alt tag inorder to specify user about the image to be shown in the website !
+
+
+- <ol type = "A"> </ol>            = add order list with numbers having index  (like enumerate)
+  - <li> ok,tushar,malhan </li>    = content inside list WITH index number  , is repeatable 
+  - <> type = "A" will index list <l1> according to alphabets  , I = roman numerals , a = small characters index 
+
+- <ul style ="list-style-type:circle">  = give unordered list without index number 
+  - <li> Your first heading </li>       = similar to ordered list , is repeatable , can give multiple styles - circle,square , None 
+</ul>
+
+
+
+.TABLE
+<table>
+  <tr>       table row
+      <th>       table heading
+  </tr>      row ended
+  <tr>
+    <td> </td>    table data
+  </tr>
+</table>
+
+add data and headings under row  seperately <th> and <td>   UNDER <tr> for both elements  
+- but if u want data to printed horizontallly               UNDER <tr> use <th> & <td>
+
+
+
+. Add styles  
+- use it anywhere ( inside body , img , h1 , )
+- use   ;  to add methods 
+
+<h1 style = "margin:0 ; text-align:center" >    = use ; text align:center inorder to shift words in the middle   
+ ( In text align:center  - <pre> tag will overrule this code and will print accordingly )
+ 
+<p p style="padding: 40px ; font-size:25px;" >  = add whitespace manually upto specific pixels 
+  My second paragraph 
+ </p>
+
+<style = width = 100%  "margin":0 >             = gives index to the image 
+<style = "margin":0;font-size:480; >            = remove whitespace  , add font-size 480
+
+<h1 style='background-color: #f2f6ff;'>         = background color specific element   like head , body , title ....
+
+
+. <div>   - use as container for other html elements 
+. <span>  - have multiple elements in one line !  
+  (use it to create minibar for ur website where - About , contact , Home will be mentioned )
+
+
+Q what if u need to change style for 100 elements ? - u won't wanna do it manually 
+- Use classes  for that !
+Create class in any element  by 
+<img class='base_syntax'>
+Use .class name {
+    define elements               anywhere = i did it under head > under style  > .
+}                            by
+
+.base_syntax{
+    width:350;
+    height:350;}                               >>> this adjustment is made where class ='name_of class' is given , as it will copy paste properties 
+
+
+
+-         < href =' url' >  add links to the html page 
+<a href="https://www.wwe.com/"  target = "_blank " > wwe </a>            - <a>     = indicates the link's destination
+ - target  = will open the website to the new tab 
+ - wwe >   = shows it on ur website , what link name u give 
+
+
+<a href = "https://www.edyoda.com/"  target ="_blank">
+<img src ="https://picsum.photos/536/354" 
+    alt = "my pic w"
+    style = width = '200' height = 250 > 
+
+ - anchor tag will allow image to be clickable , thus open ur site in new tab !
+
+
+links can be absolute path  URL's  or  path based on ur folders  
+ - <li class ="menu_item"> 
+        <a href="/index.html">Home</a> </li>       = when someone clicks on "Home" in our website  >>> index.html is loaded 
+      
+      
+      <li class ="menu_item"> 
+        <a href="/about.html"> About</a> </li>     >>> here about .html is loaded
+      
+      
+      <li class ="menu_item"> 
+        <a href="/contact.html">Contact</a> </li>  >>> here contact.html is loaded   as we create these pages in our folder 
+      
+
+
+
+
+
+This Class Style will create a menubar type 
+<style>
+    .menu_item {
+      display:inline;                      inline will print it horizontallly
+      padding:12px 16px;
+      background-color:lightblue             Home   contact   about 
+    }
+  </style>                                       
+
+
+
+
+
+
+- same as classes we use id (which includes styles of the formatted elements)
+ just like classes we use    .class_name   
+ here    under < styles >    #id_name { background-color:lightblue; padding:16px }  is given    </styles>
+ use this id type in ur elements  id=id_name
+Think of id as sub-classes    - CONNECT WITH IMAGES (so that when u click on text - u get the image !)
+
+
+ 
+
+EACH HTML ELEMENT WILL WORK EITHER LIKE BLOCK ELEMENT ( DIV ) OR INLINE ELEMENT ( SPAN )
+. < div >   BLOCK ELEMENT 
+ - always start from new line 
+ - takes up full width available 
+
+. <span>   INLINE ELEMENT 
+ - not start with new line 
+ - takes necessary width as necesary 
+
+
+Use to embed things in ur website  (all 3 does same things )
+. <embed> 
+. iframe  = use it to display another webpage from ur current website ! 
+ (use it for counter compare websites )
+ 
+ <iframe src = "youtube.com/tusharmalhan" > </iframe>
+  (same as maps - use it to copy n paste in iframe  )
+
+. <object data = "" > </object>
+
+
+
+
+HOW CAN USER HEAR FROM YOUR WEBSITE ? 
+. <audio controls >   
+    <source src = "play.mp3" type = "audio/mpeg" >             type - format type of mp3  ! 
+    Your browser Does not support Audio file                 custom message =   if browser does not support audio files 
+</audio>                                                          
+
+
+. <video width ="100" height ="100" controls >                  REMOVE CONTROLS , USE AUTOPLAY  
+      <source src = "video.mp4" type = "video/mp4" >          same like audio , use it to display video 
+      your browser does not support video                     custom message  = if browser does not support video 
+</video>                                                      CREATE VIDEO AND MEDIA PLAYERS 
+
+
+
+
+. use html keywords to print them ! via html entities   
+(    & for characters  )
+instead of < >  inorder to print  <div>  use 
+&lt; div &gt;   
+. give symbols
+&copy    - for copy right sign
+&$       - for dollar   
+#128516  - for smiley emoji
+
+
+. non semantic elements 
+  (like div and span)
+
+. semantic element   = element with a meaning for both browser and developer 
+  new semantic elements in html 5 = ( like form , table , article )
+
+
+
+. map      =  MULTIPLE LINKS FROM SINGLE IMAGE 
+ <img src="wow.jpg" usemap="#image_map">
+                <map name="image_map">                                             <!-- use image to connect multiple links from the image ! -->
+          <area alt="tushar" title="tushar" href="https://www.tusharmalhan.com" coords="1132,321,78" shape="circle">
+          <area alt="google " title="google " href="https://www.google.com  " coords="504,96,951,701" shape="rect">
+          </map>
+  
+
+
+
+. FORMS    (data gets submitted via GET , POST METHOD )
+           ( action - tells where data needs to be tranferred )
+<form method ="GET/POST" action = "">          (if data needs to get to  any other page type in "action="page_name" )
+    Name:
+      <input type = "text">           >>> take user input 
+      <div>
+              <input type ="submit">  >>> submit button !
+      </div>
+</form>
+
+< input type  = "text" , "color" , "Date" , "email" , "number" ,"reset", "password", "url" , "hidden"(for developers)
+                "range" min ="100" max="5000"
+                ( Value="ok"  - ok will be shown instead of submit )  ( maxlength = "20" length of characters )  (read - which user can't change ) 
+                ( placeholder ="enter name" - hint for the value that user will type in )
+                (autocomplete="on")         - which will pre defined suggesstions 
+                ( required   - will force user to complete the record )
+                ( min  max   = use for number attribute , step = will skip the number  ) 
+<  input type = "file">      - like u submit ur resume in the webpage
+                ( use multiple attribute in file in order to have multiple files updated )
+
+            
+- Textarea
+ inside form  = user input text 
+ <textarea rows="20" cols="50" placeholder="write ur content "> </textarea>
+
+
+- Drop down menu button
+<select size ="2" multiple>                               # multiple will allow multiple options to select 
+ <option value = "option1" selected > coffee </option>    # selected will give default option 
+ <option value = "option2"> milk coffee </option>
+</select>
+
+- optgroup = select from group of values 
+
+
+- radio button = select from the following 
+ <input type ="radio"> Male          
+ <input type ="radio" checked> Female                   # by default with checked female is selected     
+ <input type ="radio"> other          
+
+
+- check box (same like radio , but in checkbox and can provide  multiple selection for user  )
+ <input type ="checbox" > Money
+ <input type ="checbox" > Love
+
+
+
+- Datalist 
+(when we google search we have suggesstions for each character)
+first we input from user 
+<input type ="text" list ="search" >
+       <datalist id ="search">              we need to give id
+       <option value ="apple"> 
+       <option value ="strawberries"> 
+       <option value ="applepie"> 
+       <option value ="car"> 
+    </datalist>
+<input type ="submit" >
+
+
+- Labeling (when we click on name - we get shifted to check box !)
+<label for="fname">First Name</label>
+<input type ="text" id ="fname"> <br>
+<input type ="submit">
+
+
+
+. SEO tags (inside head) so that our website is undestood by browser
+ <meta name ="robots" content="noindex,nofollow" />    here google willnot index or follow page or read it 
+
+
+.FAVICON (inside icon) = icon key for ur website  inside head
+<link rel ="icon" href ="wow.jpg" type ="image/jpg">
+
+download favicon generator from web , so that u can use it any browser 
+
+
+
+CONNECT UR STYLESHEET.CSS TO UR index.html
+
+(In ur style.css)  
+<head>
+<link rel ="stylesheet" type ="text/css" href= "">
+</head>
+
+
+. Use  scripts 
+<script>
+    alert("hello")                      here windows,.alert not necesary as windows is global variable 
+</script>
+
+
+. How to attach scripts of other js files in ur current file ?
+<script src ="filename">
+</script>
+
+. How to get website be responsive ( that means = it should adjust on every device )
+ by viewport
+<head>
+    <meta name ="viewport" content ="width=device-width , initial-scale=1">
+</head>
+
+
+go to www3 to check if there is error in ur html code 
+
+
+
+
+SEMANTIC ELEMENTS IN HTML   = which describe each element meaning
+
+<main>
+<header>      introductory content   = <h1> <h6>        </header>
+  <section>     intro , content , h1 , p                </section>  = can be split it into two or more 
+  <aside>   additional info                             </aside>    = like a sidebar 
+  <article>  contains self-defined content              </article>  = like blog post ,articles etc..
+  <figure> contains all figures , images                </figures>  = like illustrations, diagrams, photos, code listings, etc.
+  <nav> <a href ="/html"> html </a> 
+|      <a href="/css/ "> CSS  </a>                      </nav>      = all major links can be given here , not all links necesary though
+  
+  <details>
+      <summary> WWE   </summary>
+      <p> proffessional wrestling  </p>                             = creates a dropdown summary for wwe in < p >
+  </details>
+  <footer>  copyright info , contact info , author name </footer>   = last info about the company or person
+</main>

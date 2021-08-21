@@ -1,0 +1,97 @@
+html = hypertext markup language   
+what was before html page   >>> terminal kind of communication when people use it >>> it is some form of communication 
+
+
+website is rich - as content on website has designs and layout
+
+what are different type of extensions , what are their uses ?     >>> html , htm , doc , txt , pdf , xml , css , js , ppt .
+other files are 
+xml , pdf , docs , ppt 
+- You can open pdf also  on the chrome , but .html is something that will be identified as,  chrome's webpage !
+ There can be 2 opening tags for html (just for reference )
+
+
+
+html (for importing external files ) ,  metadata  >     head  [only for styling ] >    body  [body of the content ] >   
+
+div means  = divison , block level element , takes up the whole block space 
+span means = continues  in the line element 
+<p> paragraph tags </p>                              >>> by default margin is applied , is also block level tag - applied to whole block 
+<h1> Header tags <h6>                                >>> font size is the difference 
+<a href=""> clickable link  </a>                     >>> redirect to another page 
+<button> click me </button>                          >>> becomes a button
+<input>
+  = in form of text box , drop down , checkbox , date >>> just change the type of the class 
+- can be placed without form tags 
+- we use the form tag so that we can give the entire user input data to the database
+
+
+how to center the form (labels and input boxes )  >>> padding left , margin left 
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+GIT 
+Version control system [ VCS ] 
+2 types  - distributed [git,mercuriam] and centralized [ subversion , ]
+
+In git there are 3 areas  =   modified  ,  staged  ,  committed
+
+|    git = install it first   |  mkdir ,touch , ls , cat , vi , rm -rf ( dangerous command )
+ 
+git --version     >>> get the version 
+git init          >>> initalize the repo into the folder created as [ .git ]  | this .git file is what we work on 
+git status        >>> get the status of the file 
+git add .         >>> move all files to Staged position
+git commit - m '' >>> finally commit ur file to the repo with 'message'   |  nothing to commit , tree is clean 
+git log           >>> check the log history , who commited it , when commited it , commit ID , author name & id
+git checkout id   >>> checkout from particular branch 
+git diff          >>> checks file content 
+
+git commit -am '' >>>  COMMIT CHANGES WITHOUT GIT ADD 
+git remote add origin (url)    >>> add the repo 
+git push origin master         >>> push the local file  to the respository
+git push origin branch1        >>> push files to branch
+
+
+
+
+
+
+
+
+Q what github , gitlab , gitenterprise and what is meant by git respository hosting functions ?
+Q difference between local repo , bare repo , remote repo        >>> local repo = ur file changes in ur host , repo = files pushed to github 
+Q git pull and git fetch difference , git instaweb 
+git fetch > changes of metadata will be pulled 
+Q git is-tree , git stash , 
+
+
+
+ uploading repos using powershell              >>> only linux commands work   USE = zsh terminal for linux commands 
+|                                                   The Windows Subsystem for Linux (WSL) is a new Windows 10 feature that enables you to run native Linux command-line tools directly on Windows, alongside your traditional Windows desktop and modern store apps.
+
+ installed windows subsytem for linux commands =  bash terminal , as mentioned i downloaded ubuntu from microsoft and bash from start menu , WHats the difference between the 2 
+  , even if i use zsh terminal , how different it will look like , and what if i run the server in cloud aws ubuntu > how would it matteer from the above softwares used ?!
+  = We can use any terminal we want as per our convenience    or use ssh for ur server 
+  Bash on Ubuntu on Windows" is based on Windows Subsystem for Linux. WSL is an implementation of Linux system calls on the Windows' NT kernel, which allows you to run Linux executables unmodified (like Wine does for Ubuntu). "Bash on Ubuntu on Windows" is just one application of WSL
+  WSL requires fewer resources (CPU, memory, and storage) than a full virtual machine. WSL also allows you to run Linux command-line tools and apps alongside your Windows command-line, desktop and store apps, and to access your Windows files from within Linux. This enables you to use Windows apps and Linux command-line tools on the same set of files if you wish.
+  type 'ubuntu'  in ur powershell in way to use linux commands in ur powershell itself not bash terminal 
+
+
+|   in ur bash terminal u can find ur windows files under /mnt/c drive = here all ur windows files will be listed down below ! 
+
+ what if im getting permission file error while trying to access my windows files  ?   (hint - runt the bash terminal as ur system administrator ! )
+ meaning of blue-yellow highlighted folders                  , how can we access the folders directly except going to the C drive    >>>  /mnt/c   = get ur local host files !
+ Blue: Directory.
+ Green: Executable or recognized data file.
